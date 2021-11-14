@@ -7,5 +7,5 @@
 - Any text editor
 
 # Working on features 
-- Create a feature branch `git checkout -b feature-name-of-feature branch`
+- Create a feature branch `git checkout -b feature-name-of-branch`
 - Always ensure that feature is included in the branch name
