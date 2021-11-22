@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+		<title>Home</title>
+        <link rel='stylesheet' type='text/css' href='styles.css' /> <!-- for the homepage -->
+        <script src = ".js"></script>	
+	</head>
+	<body class="container">
+		<header>
+            <img src=".jpg" alt="">
+            <h1>BugMe Issue Tracker</h1>
+		</header>
+
+		<main>
+            
+            <div id="id1">
+                <h1>Issues</h1>
+                <button type="submit" name ="submit" id="btn"  onclick="window.location.replace('issue_form.html')">Create New Issue</button>
+            </div>
+            <div id="tn">
+               
+                    <div id="nav_op">
+                        <h3>Filter by:</h3>
+                        <nav>
+                                <ul id="options">
+                                    <li ><button type="all" name="all" id="btn1">ALL</button></li>
+                                    <li ><button type="open" name="open" id="btn2">OPEN</button></li>
+                                    <li ><button type="tick" name="tick" id="btn3">MY TICKETS</button></a></li>
+                                </ul>
+                        </nav>
+                    </div>
+                
+                    
+                <table>
+                    <!-- <thead>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th id="stat">Status</th>
+                        <th>Assigned to</th>
+                        <th>Created</th>
+                    </thead>
+                    <tbody>
+                        <tr id="uline">
+                            <td><strong>#100</strong> <a href="http://localhost/info2180-project2/Issue100.html" class="link">XSS Vulnerability in Add User Form</a></td>
+                            <td>Bug</td>
+                            <td class="centre"><button id="open1" value = "OPEN">OPEN</button></td>
+                            <td>Tom Brady</td>
+                            <td>2019-11-01</td>
+                        </tr>
+                        <tr id="uline">
+                            <td><strong>#23</strong> <a href ="http://localhost/info2180-project2/Issue23.html" class="link">Location Service isn't working</a></td>
+                            <td>Bug</td>
+                            <td class="centre"><button id="opn">OPEN</button></td>
+                            <td>Jan Brady</td>
+                            <td>2019-10-15</td>
+                        </tr>
+                        <tr id="uline">
+                            <td><strong>#16</strong> <a href="http://localhost/info2180-project2/Issue16.html" class="link">Setup Logger</a></td>
+                            <td>Proposal</td>
+                            <td class="centre"><button id="closed">CLOSED</button></td>
+                            <td>Marsha Brady</td>
+                            <td>2019-08-10</td>
+                        </tr>
+                        <tr id="uline">
+                            <td><strong>#50</strong> <a href="http://localhost/info2180-project2/Issue50.html" class="link">Create API Documentation</a></td>
+                            <td>Proposal</td>
+                            <td class="centre"><button id="progress1" >IN PROGRESS</button></td>
+                            <td>Mike Brady</td>
+                            <td>2019-10-29</td>
+                        </tr>
+                        <tr>
+                            <td><strong>#24</strong> <a href="http://localhost/info2180-project2/Issue24.html" class="link">Allow results to be sorted</a></td>
+                            <td>Proposal</td>
+                            <td class="centre"><button id="progress2">IN PROGRESS</button></td>
+                            <td>Marcia Brady</td>
+                            <td>2019-10-20</td>
+                        </tr>
+                    </tbody> -->    
+                </table>
+        </div>
+
+                <aside id="part">
+                    <ul>
+                        <li id="home"><a href="homepage.html">Home</a></li>
+                        <li id="adduser"><a href="user.html">Add User</a></li>
+                        <li id="issue"><a href="issuesform.html">New Issue </a></li>
+                        <li id="out"><a href="http://localhost/info2180-project2/userlogin.html">Logout</a></li>
+                        
+                    </ul>
+                </aside>
+			
+			
+		</main>
+
+	</body>
+</html>
