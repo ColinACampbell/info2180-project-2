@@ -22,6 +22,17 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $user['password'] = null;
             $response['message'] = "User Found";
             $response['user'] = $user;
+            session_start();
+            $_SESSION['user'] = $user; 
+
+            // Get all the other members
+            $statement2 = $db_conn->prepare("SELECT * FROM users where id != :id");
+            $statement2->execute([
+                'id' => $user['id']
+            ]);
+            $memberResults = $statement2->fetchAll();
+
+            $response['members'] = $memberResults;
         } else {
             $response['message'] = "Incorrect Password";
         }
