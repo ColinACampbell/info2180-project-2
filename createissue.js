@@ -47,7 +47,7 @@ function formissue(){
         if (title != "" || description != ""){
             var regEx =  /^[0-9a-zA-Z]+$/;
             if(!(title.match(regEx)) || !(description.match(regEx))){
-                alert("Enter only alphanumeric characters into the description and/or title fields.")
+                alert("Enter only alphanumeric characters into the description and/or title fields.");
 
             }
         }
