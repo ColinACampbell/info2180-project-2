@@ -7,7 +7,7 @@ CREATE TABLE Users(
 	id int NOT NULL AUTO_INCREMENT,
 	firstname varchar(25),
 	lastname varchar (25),
-	password varchar (50),
+	password varchar (1000),
 	email varchar(50),
 	date_joined DATETIME NOT NULL
                 DEFAULT CURRENT_TIMESTAMP,
