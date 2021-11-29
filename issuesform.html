@@ -4,6 +4,7 @@
         <meta charset="utf-8">
 		<title>Create Issue</title>
 		<link rel='stylesheet' type='text/css' href='styles.css' /> <!-- for the main issueform -->
+        <script src="createissue.js"></script>
 	</head>
 	<body class="container">
 		<header>
@@ -15,15 +16,15 @@
 
 			<div id="controls">
 
-                <form method="post" action=".php">
+                <form method="post" name="form">
                     <h1> Create Issue</h1>
                     <div>
-                        <label>Title</label>
+                        <label for= "title">Title</label>
                         <input id="title" type="text" name="title"/>
             
                     </div>
                     <div>
-                        <label>Description</label>
+                        <label for= "description">Description</label>
                         <input id="description" type="text" name="description"/>
                     </div>
 
