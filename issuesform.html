@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+		<title>Create Issue</title>
+		<link rel='stylesheet' type='text/css' href='styles.css' /> <!-- for the main issueform -->
+	</head>
+	<body class="container">
+		<header>
+            <img src=".jpg" alt="">
+            <h1>BugMe Issue Tracker</h1>
+		</header>
+
+		<main>
+
+			<div id="controls">
+
+                <form method="post" action=".php">
+                    <h1> Create Issue</h1>
+                    <div>
+                        <label>Title</label>
+                        <input id="title" type="text" name="title"/>
+            
+                    </div>
+                    <div>
+                        <label>Description</label>
+                        <input id="description" type="text" name="description"/>
+                    </div>
+
+                    <div>
+                        <label for="assign">Assigned To </label>
+                        <select id="assign" name="assign">
+                            <option value="Blank">No Selection</option>
+                            <option value="Marsha">Marsha Brady</option>
+                            <option value="Jann">Jann Brady</option>
+                            <option value="Mike">Mike Brady</option>
+                            <option value="Marcia">Marcia Brady</option>
+                            <option value="Tom">Tom Brady</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="type1">Type </label>
+                        <select id="type1" name="type1">
+                            <option value="Blank">No Selection</option>
+                            <option value="Bug">Bug</option>
+                            <option value="Task">Task</option>
+                            <option value="Proposal">Proposal</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="priority"> Priority </label>
+                        <select id="priority" name="priority" >
+                            <option value="Blank">No Selection</option>
+                            <option value="Minor">Minor</option>
+                            <option value="Major">Major</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="submit" name ="submit" class="btn">Submit</button>
+                    </div>
+                </form>
+                <aside id="part">
+                    <ul>
+                        <li id="home"><a href="homepage.html">Home</a></li>
+                        <li id="adduser"><a href="user.html">Add User</a></li>
+                        <li id="issue"><a href="issueform.html">New Issue </a></li>
+                        <li id="out"><a href="http://localhost/info2180-project2/userlogin.html">Logout</a></li>
+                        
+                    </ul>
+                </aside>
+			</div>
+			
+			
+		</main>
+
+	</body>
+</html>
