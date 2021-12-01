@@ -16,9 +16,11 @@ window.onload = function(){
             body:formData,
             credentials:'include' // for login
         }).then(async(response)=>{
-            console.log(await response.json())
+            //console.log(await response.json())
             // Take the json check if sucess or not
             // Redirect to app home screen or show appropiate message
+            const responseJson = await response.json();
+            // responseJson.message use this to check if a user is valid
         }).catch((error)=>{
             console.log(error)
         })
