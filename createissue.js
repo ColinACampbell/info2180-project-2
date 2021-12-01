@@ -26,7 +26,7 @@ function formissue(){
           title1.style.backgroundColor = "red";
           des1.style.backgroundColor = "red";
           count = 1;
-          alert("Empty fields! Please fill out all input fields.");
+          //alert("INVALID ENTRY: Empty fields! Please Check The Textfield(s) Hightlighted In Red.");
       }
       
       if (title != "" ){
@@ -41,17 +41,28 @@ function formissue(){
 }
       if (type == "Blank" ||prior == "Blank" ||assigns == "Blank"){
           count = 1;
-          alert("All fields must be filled out. Please select appropriate options from all drop down menus.");
+          //alert("INVALID ENTRY: Please select appropriate options from all drop down menus.");
       }
 }
     function checkcorrect(title, description){
-        if (title != "" || description != ""){
-            var regEx =  /^[0-9a-zA-Z]+$/;
-            if(!(title.match(regEx)) || !(description.match(regEx))){
+        var regEx =  /^[0-9a-zA-Z]+$/;
+        if (title != "" ){
+            if(!(title.match(regEx))){
+                var title1 = document.getElementById("title");
+                title1.style.backgroundColor = "red";
                 count = 1;
-                alert("Enter only alphanumeric characters into the description and/or title fields.");
+                //alert("INVALID ENTRY: Enter only alphanumeric characters into the description and/or title fields.");
 
-            }
+            }  
+        }
+        if ( description != ""){
+            if(!(description.match(regEx))){
+                var des1 = document.getElementById("description");
+                des1.style.backgroundColor = "red";
+                count = 1;
+                //alert("INVALID ENTRY: Enter only alphanumeric characters into the description and/or title fields.");
+
+            }  
         }
 
 
@@ -60,14 +71,14 @@ function formissue(){
 }
 
 function isValid(){
-    if (formissue() == 0){
-        //alert("VALID ENTRY");
-        return true;
+    if (formissue() != 0){
+        alert("INVALID ENTRY: Please check the textfield(s) hightlighted in red. Enter only alphanumeric characters into the description and/or title fields. Please select appropriate options from all drop down menus.");
+        return false;
         
     }
     else{
-        //alert("INVALID ENTRY: Please Check The Textfield(s) Hightlighted In Red.");
-        return false;
+       
+        return true;
         
     }
     
