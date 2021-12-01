@@ -9,15 +9,14 @@
 </head>
     <div class="flex-container">
     <body>
-        <form method="post" action="" >
+        <form method="post" action="" onsubmit="return false">
             <fieldset>
             <legend>Log in to your account</legend>
             <label for="email"> Email</label> <br/>
             <input name="email" type="text" required placeholder="Enter email" /> <br/>
             <label for="password">Password</label><br /> 
             <input name="password" type="password" required placeholder="Enter password" /> <br/>
-            <button type="submit" value="Submit">Submit</button>  <br/>
-            <a href=" ">Forgot Password? </a> <br/>
+            <button id="submit">Submit</button>  <br/>
             <a href="/userlogin.html">Sign Up? </a>
             </fieldset>
         </form>
@@ -28,9 +27,11 @@
                 <li id="adduser"><a href="user.html">Add User</a></li>
                 <li id="issue"><a href="issuesform.html">New Issue </a></li>
                 <li id="out"><a href="/userlogin.html">Logout</a></li>
-                
             </ul>
         </aside>
+        <script src="./js/login.js">
+
+        </script>
     </body>
 </div>
 
