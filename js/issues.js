@@ -1,5 +1,5 @@
 window.onload = function(){
-    var url = document.location.href;
+    var url = "http://localhost/info2180-project-2/api/issue/all.php" ;
     var progbtn = document.getElementById("progbtn");
     var closebtn = document.getElementById("closebtn");
     var xhttp = new XMLHttpRequest();
@@ -9,7 +9,9 @@ window.onload = function(){
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200){
+            console.log(xhttp.responseText);
             let listinfo = JSON.parse(xhttp.responseText);
+            
             let title = document.getElementById("title");
             let body = document.getElementById("paragraph");
             let issue = document.getElementById("issue");

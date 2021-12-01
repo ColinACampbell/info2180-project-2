@@ -4,9 +4,9 @@ window.onload = function(){
 }
 
 function listenevent(){
-    let submit = document.querySelector(".btn");
+    let submit1 = document.querySelector(".btn");
     
-    submit.addEventListener('click', function(event){
+    submit1.addEventListener('click', function(event){
         formissue(); isValid(); getdata(); event.preventDefault(); 
         
         
@@ -97,7 +97,7 @@ function getdata(){
         loginForm.set("description",formdata1["description"]);
         
 
-        fetch('/api/issue/create.php', {
+        fetch('http://localhost/info2180-project-2/api/issue/create.php', {
             method: "POST", 
             body: loginForm
         })
