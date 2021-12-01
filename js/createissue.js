@@ -97,7 +97,7 @@ function getdata(){
         loginForm.set("description",formdata1["description"]);
         
 
-        fetch('http://localhost/info2180-project-2/issue/create.php', {
+        fetch('/api/issue/create.php', {
             method: "POST", 
             body: loginForm
         })
