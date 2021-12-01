@@ -1,5 +1,5 @@
 window.onload = function(){
-    var url = document.location.href;
+    var url = "http://localhost/info2180-project-2/api/issue/all.php" ;
     var progbtn = document.getElementById("progbtn");
     var closebtn = document.getElementById("closebtn");
     var xhttp = new XMLHttpRequest();
@@ -9,7 +9,9 @@ window.onload = function(){
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200){
+            console.log(xhttp.responseText);
             let listinfo = JSON.parse(xhttp.responseText);
+            
             let title = document.getElementById("title");
             let body = document.getElementById("paragraph");
             let issue = document.getElementById("issue");
@@ -24,7 +26,7 @@ window.onload = function(){
         }
     }
 
-    progbtn.addEventListener("click",function(){
+    progbtn.addEventListener('click',function(event){
         xhttp1 = new XMLHttpRequest;
         xhttp1.open("GET",url, true);
         xhttp1.send();
@@ -34,7 +36,7 @@ window.onload = function(){
         }
     })
 
-    closebtn.addEventListener("click",function(){
+    closebtn.addEventListener("click",function(event){
         xhttp2 = new XMLHttpRequest;
         xhttp2.open("GET",url, true);
         xhttp2.send();
