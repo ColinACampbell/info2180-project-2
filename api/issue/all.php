@@ -10,7 +10,7 @@ if ($user != null) {
     $getAllIssuesQuery =  "SELECT * FROM `Issues`";
     $statement = $db_conn->prepare($getAllIssuesQuery) or die("Cannot Fetch");
     $statement->execute();
-    $result = $statement->fetchAll();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     $response['issues'] = $result;
 } else 
 {
