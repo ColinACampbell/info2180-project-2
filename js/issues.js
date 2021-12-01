@@ -24,7 +24,7 @@ window.onload = function(){
         }
     }
 
-    progbtn.addEventListener("click",function(){
+    progbtn.addEventListener('click',function(event){
         xhttp1 = new XMLHttpRequest;
         xhttp1.open("GET",url, true);
         xhttp1.send();
@@ -34,7 +34,7 @@ window.onload = function(){
         }
     })
 
-    closebtn.addEventListener("click",function(){
+    closebtn.addEventListener("click",function(event){
         xhttp2 = new XMLHttpRequest;
         xhttp2.open("GET",url, true);
         xhttp2.send();
