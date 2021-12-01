@@ -18,7 +18,7 @@ window.onload = function(){
         }).then(async(response)=>{
             console.log(await response.json())
             // Take the json check if sucess or not
-            // Redirect to login screen or show appropiate message
+            // Redirect to app home screen or show appropiate message
         }).catch((error)=>{
             console.log(error)
         })
