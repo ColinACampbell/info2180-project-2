@@ -15,7 +15,7 @@ const addDataToTable = (issues) => {
         const assignedToCell = row.insertCell(3);
         const createdCell = row.insertCell(4);
 
-        titleCell.innerHTML = `${issue.id} ${issue.title}`
+        titleCell.innerHTML = `${issue.id} <a href='issue.html?id=${issue.id}'> ${issue.title} </a>`
         typeCell.innerHTML = `${issue.type}`
         statusCell.innerHTML = `${issue.status}`
         assignedToCell.innerHTML = `${issue.assigned_to}`
