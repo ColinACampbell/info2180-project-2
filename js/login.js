@@ -8,7 +8,7 @@ window.onload = function(){
         event.preventDefault();
         var email = email.value;
         var pass = password.value;
-        xhr.open('POST','http://localhost/Info2180-project-2/api/user/auth.php?user=' + user + "&pass=" + pass);
+        xhr.open('POST','/api/user/auth.php?user=' + user + "&pass=" + pass);
         xhr.send();
         xhr.onreadystatechange = function(){
             if (xhr.readyState == 4 && httpRequest.status == 200){
