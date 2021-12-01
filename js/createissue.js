@@ -7,7 +7,7 @@ function listenevent(){
     let submit1 = document.querySelector(".btn");
     
     submit1.addEventListener('click', function(event){
-        formissue(); isValid(); getdata(); event.preventDefault(); 
+        formissue(); isValid(); getdata(); home(); event.preventDefault(); 
         
         
     }) 
@@ -117,9 +117,19 @@ function getdata(){
             console.log(err);
         })
 
-        
+        return true;   
     }
+   
 
+}
+
+function home(){
+
+    if (getdata()=== true){
+        window.open("index.html");
+    }else{
+        return false;
+    }
 }
 
 
