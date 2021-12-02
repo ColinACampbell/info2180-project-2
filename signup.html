@@ -3,21 +3,39 @@
 	<head>
         <meta charset="utf-8">
 		<title>New User</title>
-        <link rel='stylesheet' type='text/css' href='styles.css' />	<!-- for the Newuser -->
+        <link rel='stylesheet' type='text/css' href='styles.css' />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <script src="signup.js"></script>
 	</head>
 	<body class="container">
-		<header>
-            <img src="bug4.jpg" alt="Image of BugMe Icon">
-            <h1>BugMe Issue Tracker</h1>
-		</header>
+
+		<aside class="sidebar">
+            <div id="sidebar-header">
+                <i class="fa fa-fw fa-bug"></i>
+                <a id="title" href="#"></i> BugMe Issue Tracker</a>
+            </div>
+            <hr class="solid">
+            <a href="homepage.html"> <i class="fa fa-fw fa-home"></i>Home</a>
+            <a href="user.html"> <i class="fa fa-fw fa-user-plus"></i>Add User</a>
+            <a href="issuesform.html"> <i class="fa fa-fw  fa-plus-circle"></i>New Issue </a>
+            <a href="http://localhost/info2180-project2/userlogin.html"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </aside>
 
 		<main>
 
-			<div id="controls">
+                <div class="title-container">
+                    <h1>New User</h1>
+                    <div class="underline">
+                        <hr class="rounded">
+                        <span class="dot"></span>
+                    </div>
+                </div>
 
-                <form method="post" action=".php">
-                    <h1> New User </h1>
+                <form class="card" method="post" action=".php">
+                    
                     <div>
                         <label>Firstname</label>
                         <input id="first" type="text" name="first_name"/>
@@ -37,24 +55,11 @@
                         <input id="pWord" type="password" name="pWord"/>
             
                     </div>
-                    </div>
-                        <label for="rememberMe"> Remember Me</label>
-                        <input type="checkbox" id="rememberMe" name="rememberMe" value="RememberMe">
-                        
-                    <div>  
                     <div>
                         <button type="submit" name ="submit" class="btn">Submit</button>
                     </div>
                 </form>
-                <aside id="leftside">
-                    <ul>
-                        <li id="home"><a href="homepage.html">Home</a></li>
-                        <li id="signup"><a href="signup.html">Sign Up</a></li>
-                        <li id="issue"><a href="issue_form.html">New Issue </a></li>
-                        <li id="out"><a href="http://localhost/info2180-project2/logout.php">Logout</a></li>
-                        
-                    </ul>
-                </aside>
+                
 			</div>
 			
 			
