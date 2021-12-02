@@ -12,7 +12,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $statement->execute([
         'email' => $email,
     ]);
-    $result = $statement->fetchAll();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     if (count($result) == 0) {
         $response['message'] = "Email Not Found";
     } else {
@@ -26,11 +26,11 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $_SESSION['user'] = $user; 
 
             // Get all the other members
-            $statement2 = $db_conn->prepare("SELECT * FROM users where id != :id");
+            $statement2 = $db_conn->prepare("SELECT id, firstName, lastName, email FROM users");
             $statement2->execute([
                 'id' => $user['id']
             ]);
-            $memberResults = $statement2->fetchAll();
+            $memberResults = $statement2->fetchAll(PDO::FETCH_ASSOC);
 
             $response['members'] = $memberResults;
         } else {
