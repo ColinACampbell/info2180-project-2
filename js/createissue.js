@@ -116,21 +116,21 @@ function getdata() {
             method: "POST",
             body: loginForm
         })
-            .then(response => {
-                if (response.ok) {
-                    return response.text();
-                }
-                else {
-                    throw new Error(`An error has occured: ${response.status}`);
-                }
-            })
-            .then((html) => {
-                console.log(html)
-
-            })
-            .catch(err => {
-                console.log(err);
-            })
+        .then(response => {
+            if(response.ok){
+                return response.text();
+            }
+            else{
+                throw new Error(`An error has occured: ${response.status}`);
+            }
+        })
+        .then((html) => {
+            console.log(html);
+          
+        })
+        .catch(err => {
+            console.log(err);
+        })
 
         return true;
     }
@@ -140,9 +140,9 @@ function getdata() {
 
 function home() {
 
-    if (getdata() === true) {
-        window.open("index.html");
-    } else {
+    if (getdata()=== true){
+        window.open("./../pages/home.html");
+    }else{
         return false;
     }
 }

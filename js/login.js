@@ -10,7 +10,7 @@ window.onload = function(){
         const formData = new FormData();
         formData.append('email',email);
         formData.append('password',pass);
-        fetch('/api/user/auth.php',{
+        fetch('http://localhost/info2180-project-2/api/user/auth.php',{
             method:"POST",
             body:formData,
             credentials:'include'
@@ -26,7 +26,7 @@ window.onload = function(){
                 alert("User Not Found!");
             }
         }).catch((error)=>{
-            console.log(error)
+            console.log(error);
         })
     })
 }
