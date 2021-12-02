@@ -110,7 +110,7 @@ function getdata(){
             }
         })
         .then((html) => {
-            console.log(html)
+            console.log(html);
           
         })
         .catch(err => {
@@ -126,7 +126,7 @@ function getdata(){
 function home(){
 
     if (getdata()=== true){
-        window.open("home.html");
+        window.open("./../pages/home.html");
     }else{
         return false;
     }
