@@ -126,7 +126,7 @@ function getdata(){
 function home(){
 
     if (getdata()=== true){
-        window.open("index.html");
+        window.open("home.html");
     }else{
         return false;
     }
