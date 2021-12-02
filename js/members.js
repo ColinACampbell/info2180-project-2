@@ -9,5 +9,3 @@ else {
         membersMap.set(member.id,member.firstName + " "+member.lastName)
     })
 }
-
-console.log(membersMap)
