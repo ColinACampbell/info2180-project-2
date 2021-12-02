@@ -18,7 +18,7 @@ const addDataToTable = (issues) => {
         titleCell.innerHTML = `${issue.id} <a href='/pages/view-issue.html?id=${issue.id}'> ${issue.title} </a>`
         typeCell.innerHTML = `${issue.type}`
         statusCell.innerHTML = `${issue.status}`
-        assignedToCell.innerHTML = `${issue.assigned_to}`
+        assignedToCell.innerHTML = `${membersMap.get(issue.assigned_to)}`
         createdCell.innerHTML = `${issue.created}`
 
         rowCount ++;
