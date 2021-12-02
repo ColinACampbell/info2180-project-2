@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Info2180-Project2</title>
+    <title>Issue</title>
         <!--Stylesheet link-->
-         <link rel="stylesheet" href="styles.css">
-         <link rel="stylesheet" href="">
+        <link rel='stylesheet' type='text/css' href='styles.css' /> <!-- for the main issueform -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
          <script src="issues.js"></script>
     </head>
 
 
      <body>
-        <div class= "header">
-            <h1>BugMe Issue Tracker</h1> 
-        </div>
+        <aside class="sidebar">
+            <div id="sidebar-header">
+                <i class="fa fa-fw fa-bug"></i>
+                <a id="title" href="#"></i> BugMe Issue Tracker</a>
+            </div>
+            <hr class="solid">
+            <a href="homepage.html"> <i class="fa fa-fw fa-home"></i>Home</a>
+            <a href="user.html"> <i class="fa fa-fw fa-user-plus"></i>Add User</a>
+            <a href="issuesform.html"> <i class="fa fa-fw  fa-plus-circle"></i>New Issue </a>
+            <a href="http://localhost/info2180-project2/userlogin.html"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </aside>
     <main>
         <div class= "body">
             <div class= "bodygrid">
                 <div id="bodymain">
-                    <h2 id =title>XSS Vulnerability in Add User Form</h2>
+                    <h1 id =title>XSS Vulnerability in Add User Form</h1>
                     <div id=issue>
                        
                     </div>
     
-                    <div id=paragraph>
+                    <div class="card" id=paragraph>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -35,23 +46,14 @@
                 </div>
     
                 <div id=asidemain>
-                                
+                      
                 </div>
                 
-                <div id="btn">
-                    <button id="closebtn">Mark as Closed</button> <br/>
-                    <button id="progbt">Mark as In Progress</button>
+                <div id="btn-group">
+                    <button class="btn" id="closebtn">Mark as Closed</button> <br/>
+                    <button class="btn" id="progbt">Mark as In Progress</button>
                     </div>
-                           <aside id="sidetab">
-                               <ul>
-                                   <li id="home"><a href="homepage.html">Home</a></li>
-                                   <li id="adduser"><a href="user.html">Add User</a></li>
-                                   <li id="issue"><a href="issueform.html">New Issue </a></li>
-                                   <li id="out"><a href="http://localhost/info2180-project2/userlogin.html">Logout</a></li>
-                                   
-                               </ul>
-     
-                            </aside>
+                          
                         </main>
     </body>
 
