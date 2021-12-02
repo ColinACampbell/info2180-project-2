@@ -1,11 +1,21 @@
 window.onload = function(){
 
-    var xhr = new XMLHttpRequest;
-    xhr.open('GET', 'http://localhost/Info2180-project-2/api/user/auth.php');
-    xhr.send();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200){
-            window.location = 'userlogin.html';
-        }
-    }
+    var logout = document.getElementById('out');
+
+    logout.addEventListener('click', function(event){
+        event.preventDefault();
+        fetch('/api/user/session.php',{
+            method:"POST",
+            //body:"Logout",
+        }).then(async(response)=>{
+            const responseJson = await response.json();
+            if (responseJson.message == "Session Ended") {
+                window.location = 'Login.html';
+            } else {
+                alert("Unable to Logout!");
+            }
+        }).catch((error)=>{
+            console.log(error)
+        })
+    })
 }
