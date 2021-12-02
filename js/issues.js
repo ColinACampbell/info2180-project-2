@@ -21,7 +21,7 @@ const addDataToTable = (issues) => {
         typeCell.innerHTML = `${issue.type}`
         statusCell.innerHTML = `${issue.status}`
         assignedToCell.innerHTML = `${membersMap.get(issue.assigned_to)}`
-        createdCell.innerHTML = `${createdDate.getFullYear() + "-" + createdDate.getMonth() + "-" + (createdDate.getDate())}`
+        createdCell.innerHTML = `${createdDate.getFullYear() + "-" + (createdDate.getMonth()+1) + "-" + (createdDate.getDate())}`
 
         rowCount ++;
     })

@@ -1,3 +1,18 @@
+const MONTHS = {
+    0 : "January",
+    1 : "Febuary",
+    2 : "March",
+    3 : "April",
+    4: "May",
+    5 : "June",
+    6 : "July",
+    7 : "August",
+    8 : "September",
+    9 : "October",
+    10: "November",
+    11: "December"
+}
+
 window.onload = function () {
    
     const urlSearchParams = new URLSearchParams(window.location.search);
@@ -45,8 +60,13 @@ const populateIssue = (issue) => {
     const issueDescription= document.getElementById('description')
     issueDescription.innerHTML = issue.description
 
+
+    const createdDate = new Date(issue.created)
+
     const issueCreated = document.getElementById('issue-created')
-    issueCreated.innerHTML = issue.created
+
+    console.log(issue.created_by,membersMap)
+    issueCreated.innerHTML = `Issue Created On ${MONTHS[createdDate.getMonth()] + " " + createdDate.getDate()} By ${membersMap.get(issue.created_by)}`
 
     const issueUpdated = document.getElementById('issue-updated')
     issueUpdated.innerHTML = issue.updated
