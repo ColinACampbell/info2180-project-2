@@ -21,7 +21,7 @@ window.onload = function(){
             localStorage.setItem('members',JSON.stringify(responseJson.members))
             // responseJson.message use this to check if a user is valid
             if (responseJson.message == "User Found") {
-                window.location = 'index.html';
+                window.location = '/pages/issues.html';
             } else {
                 alert("User Not Found!");
             }
