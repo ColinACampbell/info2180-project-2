@@ -62,12 +62,12 @@ const populateIssue = (issue) => {
 
 
     const createdDate = new Date(issue.created)
+    const updatedDate = new Date(issue.updated)
 
     const issueCreated = document.getElementById('issue-created')
 
-    console.log(issue.created_by,membersMap)
     issueCreated.innerHTML = `Issue Created On ${MONTHS[createdDate.getMonth()] + " " + createdDate.getDate()} By ${membersMap.get(issue.created_by)}`
 
     const issueUpdated = document.getElementById('issue-updated')
-    issueUpdated.innerHTML = issue.updated
+    issueUpdated.innerHTML = `Issue Updated On ${MONTHS[updatedDate.getMonth()] + " " + updatedDate.getDate()}`
 }
