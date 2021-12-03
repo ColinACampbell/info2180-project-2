@@ -28,7 +28,7 @@ window.onload = function(){
             }
         }).catch((error)=>{
             console.log(error);
-            alert("There was an error login in")
+            alert("There was an error logging in")
         })
     })
 }
