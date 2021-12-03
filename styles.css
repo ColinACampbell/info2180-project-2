@@ -1,0 +1,256 @@
+html,body{
+    height: 100%;
+    margin: 0;
+
+    font-family: 'Roboto', sans-serif;
+}
+.sidebar {
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+  }
+  
+  /* Style sidebar links */
+  .sidebar a {
+    padding: 6px 8px 19px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #7BCBDD;
+    display: block;
+  }
+  
+  /* Style links on mouse-over */
+  .sidebar a:hover {
+    color: #6bb3c4;
+  }
+
+  #sidebar-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #sidebar-header i {
+    font-size: 111px;
+    color: #7BCBDD;
+
+    padding: 5px;
+  }
+
+  #title {
+      font-size: 40px;
+      font-weight: bold;
+  }
+
+  hr.solid {
+    border-top: 10px solid #7BCBDD;
+  }
+  
+  /* Style the main content */
+  body {
+    margin-left: 280px; /* Same as the width of the sidenav */
+    padding: 20px 90px;
+
+    height: 100%;
+    margin-top: 0px;
+    background-color: #7BCBDD;
+  }
+
+  #issues-header{
+    display: flex;
+    flex-direction: row; 
+
+    justify-content:space-between;
+    align-items: center;
+  }
+
+  h1 {
+    color: white;
+    margin-bottom: 0;
+  }
+
+ .btn {
+    background:#FCC63B;
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+    padding: 10px;
+
+    font-weight: bold;
+  }
+
+  .open-btn {
+      background-color: #76E36C;
+  }
+
+  .closed-btn {
+    background-color: #f58254;
+  }
+
+  .progress-btn {
+    background-color: #f5ea54;
+  }
+
+  .centre {
+      text-align: center;
+  }
+
+  hr.rounded {
+    background-color: #fff;
+    color: #fff;
+    border-top: 2px solid #fff;
+    border-radius: 10px;
+    width: 80px;
+    margin: 0;
+    height: 3px;
+  }
+  .dot {
+    height: 6px;
+    width: 6px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .underline {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .underline hr{
+    margin-right: 5px;
+    margin-bottom: 20px;
+  }
+
+  #nav-op{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #fff;
+  }
+
+  #nav-op h3{
+    font-weight: normal;
+  }
+
+  #options{
+      display: flex;
+      flex-direction: row;
+      justify-content:space-around;
+  }
+
+  #options li {
+      list-style-type: none;
+  }
+
+  
+
+  #options li button {
+    background-color: rgba(255, 255, 255, 0);
+    color:#fff;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 7px 18px;
+  }
+
+  .selected {
+    background-color: #FCC63B !important;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+thead {
+    display: block;
+    position: relative;
+    text-align: left;
+    color:#fff;
+    background-color:#8EADB4;
+    border-radius: 10px 10px 0 0;
+
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.301);
+    width: 100%;
+
+    
+    
+}
+
+th {
+    padding: 15px;
+    
+}
+
+tbody {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+table tr{
+    display:table;
+    table-layout:fixed;
+    width:100%;
+}
+
+td {
+    padding: 20px;
+    border-bottom: 1px solid #8eadb438;
+}
+
+.card{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.226);
+}
+
+.card div{
+  padding: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+input[type="text"], input[type="password"], input[type="email"], select, textarea {
+  border-radius: 10px;
+  border: none;
+  background-color: #F2F1F1;
+  width: 100%;
+}
+
+input[type="text"], input[type="password"], input[type="email"], select {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+select {
+  padding-right: 200px;
+}
+
+
+
+label {
+  color: #2F4B51;
+  font-weight: bold;
+}
+
+.controls .btn {
+  width: 100%;
+}
