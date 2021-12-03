@@ -18,15 +18,17 @@ window.onload = function(){
             // Take the json check if sucess or not
             // Redirect to app home screen or show appropiate message
             const responseJson = await response.json();
-            localStorage.setItem('members',JSON.stringify(responseJson.members))
             // responseJson.message use this to check if a user is valid
             if (responseJson.message == "User Found") {
-                window.location = '/pages/issues.html';
+                window.location = './home.html';
+                localStorage.setItem('members',JSON.stringify(responseJson.members))
+                localStorage.setItem('user',JSON.stringify(responseJson.user))
             } else {
                 alert("User Not Found!");
             }
         }).catch((error)=>{
             console.log(error);
+            alert("There was an error login in")
         })
     })
 }

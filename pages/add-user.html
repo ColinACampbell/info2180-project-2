@@ -2,30 +2,32 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Add User</title>
- <link rel='stylesheet' type='text/css' href='styles.css' >
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
- <script src="./../js/environment.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <script src="./../js/environment.js"></script>
+    <link rel='stylesheet' type='text/css' href='styles.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <script src="js\login.js"></script>
 </head>
-    <div class="container">
+<div class="container">
 
-        <aside class="sidebar">
-            <div id="sidebar-header">
-                <i class="fa fa-fw fa-bug"></i>
-                <a id="title" href="#"></i> BugMe Issue Tracker</a>
-            </div>
-            <hr class="solid">
-            <a href="index.html"> <i class="fa fa-fw fa-home"></i>Home</a>
-            <a href="user.html"> <i class="fa fa-fw fa-user-plus"></i>Add User</a>
-            <a href="issuesform.html"> <i class="fa fa-fw  fa-plus-circle"></i>New Issue </a>
-            <a href="login.html"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </aside>
-    
+    <aside class="sidebar">
+        <div id="sidebar-header">
+            <i class="fa fa-fw fa-bug"></i>
+            <a id="title" href="#"></i> BugMe Issue Tracker</a>
+        </div>
+        <hr class="solid">
+        <a href="./../home.html"> <i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="#"> <i class="fa fa-fw fa-user-plus"></i>Add User</a>
+        <a href="./../pages/create-issue.html"> <i class="fa fa-fw  fa-plus-circle"></i>New Issue </a>
+        <a href="./../index.html"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+    </aside>
+
     <body>
         <div class="title-container">
             <h1>New User</h1>
@@ -34,31 +36,31 @@
                 <span class="dot"></span>
             </div>
         </div>
-        
+
         <form class="card" method="post" action="" onsubmit="return false">
             <div>
-                <label for="firstname"> First Name </label> <br/>
+                <label for="firstname"> First Name </label> <br />
                 <input name="firstname" type="text" required placeholder="Enter First Name" />
             </div>
 
             <div>
-                <label for="lastname"> Last Name </label> <br/>
+                <label for="lastname"> Last Name </label> <br />
                 <input name="lastname" type="text" required placeholder="Enter Last Name" />
             </div>
 
             <div>
-                <label for="email"> Email</label> <br/>
+                <label for="email"> Email</label> <br />
                 <input name="email" type="text" required placeholder="Enter email" />
             </div>
 
             <div>
                 <label for="password">Password</label>
-                <input name="password" type="password" required placeholder="Enter password" /> <br/>
+                <input name="password" type="password" required placeholder="Enter password" /> <br />
             </div>
 
-            <div><button class="btn" id="submit">Submit</button></div> 
+            <div><button class="btn" id="submit">Submit</button></div>
         </form>
-        
+
     </body>
     <script src="./../js/createUser.js"></script>
 

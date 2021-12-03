@@ -1,94 +1,92 @@
 <!DOCTYPE html>
 <html>
-	<head>
-        <meta charset="utf-8">
-		<title>Create Issue</title>
-		<link rel='stylesheet' type='text/css' href='styles.css' >
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-        <script src="./../js/members.js"></script>
-        <script src="./../js/environment.js"></script>
-	</head>
-	<body class="container">
-		<aside class="sidebar">
-            <div id="sidebar-header">
-                <i class="fa fa-fw fa-bug"></i>
-                <a id="title" href="#"></i> BugMe Issue Tracker</a>
-            </div>
-            <hr class="solid">
-            <a href="index.html"> <i class="fa fa-fw fa-home"></i>Home</a>
-            <a href="user.html"> <i class="fa fa-fw fa-user-plus"></i>Add User</a>
-            <a href="issuesform.html"> <i class="fa fa-fw  fa-plus-circle"></i>New Issue </a>
-            <a href="login.html"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </aside>
 
-		<main>
-            <div class="title-container">
-                <h1> Create Issue</h1>
-                <div class="underline">
-                    <hr class="rounded">
-                    <span class="dot"></span>
+<head>
+    <meta charset="utf-8">
+    <title>Create Issue</title>
+    <script src="./../js/members.js"></script>
+    <script src="./../js/environment.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='styles.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="container">
+    <aside class="sidebar">
+        <div id="sidebar-header">
+            <i class="fa fa-fw fa-bug"></i>
+            <a id="title" href="#"></i> BugMe Issue Tracker</a>
+        </div>
+        <hr class="solid">
+        <a href="./../home.html"> <i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="./../pages/add-user.html"> <i class="fa fa-fw fa-user-plus"></i>Add User</a>
+        <a href="#"> <i class="fa fa-fw  fa-plus-circle"></i>New Issue </a>
+        <a href="./../index.html"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+    </aside>
+
+    <main>
+        <div class="title-container">
+            <h1> Create Issue</h1>
+            <div class="underline">
+                <hr class="rounded">
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="card" id="controls">
+
+            <form method="post" name="form">
+                <div>
+                    <div>
+                        <label for="title">Title</label>
+                        <input id="title-field title" type="text" name="title" />
+                    </div>
+                    <div>
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="8" cols="80"></textarea>
+                    </div>
+                    <div>
+                        <label for="assign">Assigned To </label>
+                        <select id="assign" name="assign">
+                           
+                        </select>
+                    </div>
                 </div>
-            </div>
 
-			<div class="card" id="controls">
-
-                <form method="post" name="form">
+                <div class="horizontal-group">
+                    <div class="column">
+                        <label for="type1">Type </label>
+                        <select id="type1" name="type1">
+                            <option value="Blank">No Selection</option>
+                            <option value="Bug">Bug</option>
+                            <option value="Task">Task</option>
+                            <option value="Proposal">Proposal</option>
+                        </select>
+                    </div>
                     <div>
-                        <div>
-                            <label for= "title">Title</label>
-                            <input id="title-field" type="text" name="title"/>
-                        </div>
-                        <div>
-                            <label for= "description">Description</label>
-                            <textarea id="description" name="description" rows="8" cols="80"></textarea>
-                        </div>
-                        <div>
-                            <label for="assign">Assigned To </label>
-                            <select id="assign" name="assign">
-                                <option value="Blank">No Selection</option>
-                                <option value="Marsha">Marsha Brady</option>
-                                <option value="Jann">Jann Brady</option>
-                                <option value="Mike">Mike Brady</option>
-                                <option value="Marcia">Marcia Brady</option>
-                                <option value="Tom">Tom Brady</option>
-                                <option value="Admin">Admin</option>
-                            </select>
-                        </div>
+                        <label for="priority"> Priority </label>
+                        <select id="priority" name="priority">
+                            <option value="Blank">No Selection</option>
+                            <option value="Minor">Minor</option>
+                            <option value="Major">Major</option>
+                            <option value="Critical">Critical</option>
+                        </select>
                     </div>
+                </div>
 
-                    <div class="horizontal-group">
-                        <div class="column">
-                            <label for="type1">Type </label>
-                            <select id="type1" name="type1">
-                                <option value="Blank">No Selection</option>
-                                <option value="Bug">Bug</option>
-                                <option value="Task">Task</option>
-                                <option value="Proposal">Proposal</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="priority"> Priority </label>
-                            <select id="priority" name="priority" >
-                                <option value="Blank">No Selection</option>
-                                <option value="Minor">Minor</option>
-                                <option value="Major">Major</option>
-                                <option value="Critical">Critical</option>
-                            </select>
-                        </div>
-                    </div>
+                <div>
+                    <button type="submit" name="submit" class="btn">Submit</button>
+                </div>
+            </form>
 
-                    <div>
-                        <button type="submit" name ="submit" class="btn">Submit</button>
-                    </div>
-                </form>
-            
-			</div>
-			
-			
-		</main>
-        <script src="./../js/createissue.js"></script>
+        </div>
+
+
+    </main>
+    <script src="./../js/createissue.js"></script>
 
 </html>

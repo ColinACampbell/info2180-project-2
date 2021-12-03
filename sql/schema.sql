@@ -3,6 +3,10 @@ CREATE DATABASE bugme;
 
 USE bugme;
 
+CREATE USER 'bugme_user'@'localhost' IDENTIFIED BY '0000';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON VoteLogDB.* TO 'bugme_user'@'localhost' IDENTIFIED BY '0000';
+
+
 CREATE TABLE Users(
 	id int NOT NULL AUTO_INCREMENT,
 	firstname varchar(25),
@@ -30,7 +34,7 @@ CREATE TABLE Issues(
 	PRIMARY KEY (id)
 );
 
-# Password is 1234
+/*** Password is 1234 ***/
 INSERT INTO Users VALUES ("0","Nikola","Tesla","$2y$10$tr.mDa0YbG/x./I04L77buFwCG8ChtdF7qYdbFRQs97ofxAnClsaK","admin@project2.com","2019-11-26");
 INSERT INTO Issues VALUES ("0","Final Project",
 	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
