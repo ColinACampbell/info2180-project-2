@@ -113,7 +113,7 @@ function getdata() {
         loginForm.set("status","OPEN")
 
 
-        fetch('/api/issue/create.php', {
+        fetch(httpUrl+'/api/issue/create.php', {
             method: "POST",
             body: loginForm,
             credentials: "include"

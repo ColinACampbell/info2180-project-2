@@ -38,7 +38,7 @@ const updateIssueStatus = (id,newStatus) => {
 
     const formData = new FormData();
     formData.append('newStatus',newStatus);
-    fetch('/api/issue/mark.php?id='+id,{
+    fetch(httpUrl+'/api/issue/mark.php?id='+id,{
         method:"POST",
         body: formData,
     })
@@ -46,7 +46,7 @@ const updateIssueStatus = (id,newStatus) => {
 
 
 const getIssue = (id) => {
-    fetch('/api/issue/get.php?id=' + id).then(async (response) => {
+    fetch(httpUrl+'/api/issue/get.php?id=' + id).then(async (response) => {
         const jsonReponse = await response.json();
         const issue = jsonReponse.issue
         populateIssue(issue)

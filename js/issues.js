@@ -28,7 +28,7 @@ const addDataToTable = (issues) => {
 }
 
 const getIssues = () => {
-    fetch('/api/issue/all.php').then(async (response) => {
+    fetch(httpUrl+'/api/issue/all.php').then(async (response) => {
         const jsonReponse = await response.json();
         const issues = jsonReponse.issues
         addDataToTable(issues)
