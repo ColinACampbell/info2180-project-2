@@ -34,35 +34,35 @@ function formissue() {
     checkempty(formdata["title"], formdata["description"], formdata["type1"], formdata["priority"], formdata["assign"]);
     checkcorrect(formdata["title"], formdata["description"]);
 
-    function checkempty(title, description, type, prior, assigns) {
-        if (title == "" || description == "") {
-            var title1 = document.getElementById("title");
-            var des1 = document.getElementById("description");
-            title1.style.backgroundColor = "red";
-            des1.style.backgroundColor = "red";
-            count = 1;
-            //alert("INVALID ENTRY: Empty fields! Please Check The Textfield(s) Hightlighted In Red.");
-        }
-
-        if (title != "") {
-            var title2 = document.getElementById("title");
-            title2.style.backgroundColor = "white";
-            //alert("Not empty");
-        }
-        if (description != "") {
-            var des2 = document.getElementById("description");
-            des2.style.backgroundColor = "white";
-            //alert("Not empty description");      
-        }
-        if (type == "Blank" || prior == "Blank" || assigns == "Blank") {
-            count = 1;
-            //alert("INVALID ENTRY: Please select appropriate options from all drop down menus.");
-        }
-    }
-    function checkcorrect(title, description) {
-        var regEx = /^[0-9a-zA-Z]+$/; // TODO: Include white space
-        if (title != "") {
-            if (!(title.match(regEx))) {
+    function checkempty(title, description, type, prior, assigns){
+      if (title == "" || description == ""){
+          var title1 = document.getElementById("title");
+          var des1 = document.getElementById("description");
+          title1.style.backgroundColor = "red";
+          des1.style.backgroundColor = "red";
+          count = 1;
+          //alert("INVALID ENTRY: Empty fields! Please Check The Textfield(s) Hightlighted In Red.");
+      }
+      
+      if (title != "" ){
+          var title2 = document.getElementById("title");
+          title2.style.backgroundColor = "white";
+          //alert("Not empty");
+  }
+      if (description != "" ){
+          var des2 = document.getElementById("description");
+          des2.style.backgroundColor = "white";
+          //alert("Not empty description");      
+}
+      if (type == "Blank" ||prior == "Blank" ||assigns == "Blank"){
+          count = 1;
+          //alert("INVALID ENTRY: Please select appropriate options from all drop down menus.");
+      }
+}
+    function checkcorrect(title, description){
+        var regEx =  /^[a-z\d\-_\s]+$/i;
+        if (title != "" ){
+            if(!(title.match(regEx))){
                 var title1 = document.getElementById("title");
                 title1.style.backgroundColor = "red";
                 count = 1;
