@@ -10,7 +10,7 @@ window.onload = function(){
         const formData = new FormData();
         formData.append('email',email);
         formData.append('password',pass);
-        fetch('/api/user/auth.php',{
+        fetch(httpUrl+'/api/user/auth.php',{
             method:"POST",
             body:formData,
             credentials:'include'
