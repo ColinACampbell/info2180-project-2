@@ -10,7 +10,7 @@ window.onload = function(){
         const formData = new FormData();
         formData.append('email',email);
         formData.append('password',pass);
-        fetch('http://localhost/info2180-project-2/api/user/auth.php',{
+        fetch('/api/user/auth.php',{
             method:"POST",
             body:formData,
             credentials:'include'

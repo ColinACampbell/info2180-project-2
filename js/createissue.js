@@ -60,7 +60,7 @@ function formissue() {
         }
     }
     function checkcorrect(title, description) {
-        var regEx = /^[0-9a-zA-Z]+$/;
+        var regEx = /^[0-9a-zA-Z]+$/; // TODO: Include white space
         if (title != "") {
             if (!(title.match(regEx))) {
                 var title1 = document.getElementById("title");
@@ -110,11 +110,13 @@ function getdata() {
         loginForm.set("priority", formdata1["priority"]);
         loginForm.set("title", formdata1["title"]);
         loginForm.set("description", formdata1["description"]);
+        loginForm.set("status","OPEN")
 
 
-        fetch('http://localhost/info2180-project-2/api/issue/create.php', {
+        fetch('/api/issue/create.php', {
             method: "POST",
-            body: loginForm
+            body: loginForm,
+            credentials: "include"
         })
         .then(response => {
             if(response.ok){
@@ -141,7 +143,10 @@ function getdata() {
 function home() {
 
     if (getdata()=== true){
-        window.open("./../pages/home.html");
+    {
+        alert("Issue was created")
+        window.location.href = "./../pages/issues.html";
+    }
     }else{
         return false;
     }

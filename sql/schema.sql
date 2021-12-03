@@ -30,7 +30,8 @@ CREATE TABLE Issues(
 	PRIMARY KEY (id)
 );
 
-INSERT INTO Users VALUES ("0","Nikola","Tesla","password123","admin@project2.com","2019-11-26");
+# Password is 1234
+INSERT INTO Users VALUES ("0","Nikola","Tesla","$2y$10$tr.mDa0YbG/x./I04L77buFwCG8ChtdF7qYdbFRQs97ofxAnClsaK","admin@project2.com","2019-11-26");
 INSERT INTO Issues VALUES ("0","Final Project",
 	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
