@@ -17,7 +17,7 @@ const addDataToTable = (issues) => {
 
         const createdDate = new Date(issue.created)
 
-        titleCell.innerHTML = `${issue.id} <a href='/pages/view-issue.html?id=${issue.id}'> ${issue.title} </a>`
+        titleCell.innerHTML = `${issue.id} <a href='./view-issue.html?id=${issue.id}'> ${issue.title} </a>`
         typeCell.innerHTML = `${issue.type}`
         statusCell.innerHTML = `${issue.status}`
         assignedToCell.innerHTML = `${membersMap.get(issue.assigned_to)}`
