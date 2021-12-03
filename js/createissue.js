@@ -45,7 +45,7 @@ function formissue(){
       }
 }
     function checkcorrect(title, description){
-        var regEx =  /^[0-9a-zA-Z]+$/;
+        var regEx =  /^[a-z\d\-_\s]+$/i;
         if (title != "" ){
             if(!(title.match(regEx))){
                 var title1 = document.getElementById("title");
