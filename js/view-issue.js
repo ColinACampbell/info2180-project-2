@@ -19,8 +19,8 @@ window.onload = function () {
     const params = Object.fromEntries(urlSearchParams.entries());
     const id = parseInt(params.id);
 
-    const statusCloseBtn = document.getElementById('status-close-btn');
-    const statusProgBtn = document.getElementById('status-prog-btn');
+    const statusCloseBtn = document.getElementById('closebtn');
+    const statusProgBtn = document.getElementById('progbtn');
 
     statusProgBtn.addEventListener('click', () => {
         updateIssueStatus(id, 'INPROGRESS')
@@ -60,11 +60,16 @@ const getIssue = (id) => {
 }
 
 const populateIssue = (issue) => {
-    const issueTitle = document.getElementById('title')
+    const issueTitle = document.getElementsByClassName('issue-title')[0]
+    console.log(issueTitle.innerText)
+
     issueTitle.innerHTML = issue.title
 
     const issueDescription = document.getElementById('description')
     issueDescription.innerHTML = issue.description
+
+    const issueNumber = document.getElementById('subtitle')
+    issueNumber.innerHTML = `Issue #${issue.id}`
 
 
     const createdDate = new Date(issue.created)
