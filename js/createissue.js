@@ -22,9 +22,7 @@ function listenevent() {
     let submit1 = document.querySelector(".btn");
 
     submit1.addEventListener('click', function (event) {
-        formissue(); isValid(); getdata(); home(); event.preventDefault();
-
-
+        /**formissue(); **/isValid(); getdata(); /**home();**/ event.preventDefault();
     })
 }
 
@@ -34,35 +32,35 @@ function formissue() {
     checkempty(formdata["title"], formdata["description"], formdata["type1"], formdata["priority"], formdata["assign"]);
     checkcorrect(formdata["title"], formdata["description"]);
 
-    function checkempty(title, description, type, prior, assigns){
-      if (title == "" || description == ""){
-          var title1 = document.getElementById("title");
-          var des1 = document.getElementById("description");
-          title1.style.backgroundColor = "red";
-          des1.style.backgroundColor = "red";
-          count = 1;
-          //alert("INVALID ENTRY: Empty fields! Please Check The Textfield(s) Hightlighted In Red.");
-      }
-      
-      if (title != "" ){
-          var title2 = document.getElementById("title");
-          title2.style.backgroundColor = "white";
-          //alert("Not empty");
-  }
-      if (description != "" ){
-          var des2 = document.getElementById("description");
-          des2.style.backgroundColor = "white";
-          //alert("Not empty description");      
-}
-      if (type == "Blank" ||prior == "Blank" ||assigns == "Blank"){
-          count = 1;
-          //alert("INVALID ENTRY: Please select appropriate options from all drop down menus.");
-      }
-}
-    function checkcorrect(title, description){
-        var regEx =  /^[a-z\d\-_\s]+$/i;
-        if (title != "" ){
-            if(!(title.match(regEx))){
+    function checkempty(title, description, type, prior, assigns) {
+        if (title == "" || description == "") {
+            var title1 = document.getElementById("title");
+            var des1 = document.getElementById("description");
+            title1.style.backgroundColor = "red";
+            des1.style.backgroundColor = "red";
+            count = 1;
+            //alert("INVALID ENTRY: Empty fields! Please Check The Textfield(s) Hightlighted In Red.");
+        }
+
+        if (title != "") {
+            var title2 = document.getElementById("title");
+            title2.style.backgroundColor = "white";
+            //alert("Not empty");
+        }
+        if (description != "") {
+            var des2 = document.getElementById("description");
+            des2.style.backgroundColor = "white";
+            //alert("Not empty description");      
+        }
+        if (type == "Blank" || prior == "Blank" || assigns == "Blank") {
+            count = 1;
+            //alert("INVALID ENTRY: Please select appropriate options from all drop down menus.");
+        }
+    }
+    function checkcorrect(title, description) {
+        var regEx = /^[a-z\d\-_\s]+$/i;
+        if (title != "") {
+            if (!(title.match(regEx))) {
                 var title1 = document.getElementById("title");
                 title1.style.backgroundColor = "red";
                 count = 1;
@@ -99,40 +97,41 @@ function isValid() {
 
 }
 
-function getdata() {
+async function getdata() {
     var formdata1 = { assign: form.assign.value, type1: form.type1.value, priority: form.priority.value, title: form.title.value, description: form.description.value };
 
     if (isValid() === true) {
         let loginForm = new FormData();
 
         loginForm.set("assignedTo", formdata1["assign"]);
-        loginForm.set("type", formdata1["type1"]);
+        loginForm.set("type", formdata1["type1"].toUpperCase());
         loginForm.set("priority", formdata1["priority"]);
         loginForm.set("title", formdata1["title"]);
         loginForm.set("description", formdata1["description"]);
-        loginForm.set("status","OPEN")
+        loginForm.set("status", "OPEN")
 
 
-        fetch(httpUrl+'/api/issue/create.php', {
+        await fetch(httpUrl + '/api/issue/create.php', {
             method: "POST",
             body: loginForm,
             credentials: "include"
         })
-        .then(response => {
-            if(response.ok){
-                return response.text();
-            }
-            else{
-                throw new Error(`An error has occured: ${response.status}`);
-            }
-        })
-        .then((html) => {
-            console.log(html);
-          
-        })
-        .catch(err => {
-            console.log(err);
-        })
+            .then(response => {
+                if (response.ok) {
+                    alert("Issue was created")
+                    window.location.href = "./../home.html";
+                }
+                else {
+                    throw new Error(`An error has occured: ${response.status}`);
+                }
+            })
+            .then((html) => {
+                console.log(html);
+
+            })
+            .catch(err => {
+                console.log(err);
+            })
 
         return true;
     }
@@ -142,12 +141,12 @@ function getdata() {
 
 function home() {
 
-    if (getdata()=== true){
-    {
-        alert("Issue was created")
-        window.location.href = "./../pages/issues.html";
-    }
-    }else{
+    if (getdata() === true) {
+        {
+            alert("Issue was created")
+            window.location.href = "./../home.html";
+        }
+    } else {
         return false;
     }
 }
