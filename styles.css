@@ -61,7 +61,7 @@ html,body{
     margin-top: 0px;
     background-color: #7BCBDD;
   }
-
+  
   #issues-header{
     display: flex;
     flex-direction: row; 
@@ -200,6 +200,8 @@ table tr{
     table-layout:fixed;
     width:100%;
 }
+
+
 
 td {
     padding: 20px;
