@@ -4,31 +4,50 @@
 <head>
     <meta charset="utf-8">
     <title>Home</title>
-    <link rel='stylesheet' type='text/css' href='' /> <!-- for the homepage -->
+    <link rel='stylesheet' type='text/css' href='styles.css' >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="./../js/environment.js"></script>
 
 </head>
 
 <body class="container">
-    <header>
-        <img src=".jpg" alt="">
-        <h1>BugMe Issue Tracker</h1>
-    </header>
+
+    <aside class="sidebar">
+        <div id="sidebar-header">
+            <i class="fa fa-fw fa-bug"></i>
+            <a id="title" href="./../pages/home.html"></i> BugMe Issue Tracker</a>
+        </div>
+        <hr class="solid">
+        <a id="home" href="./../pages/home.html"> <i class="fa fa-fw fa-home"></i>Home</a>
+        <a id="adduser" href="./../pages/add-user.html"> <i class="fa fa-fw fa-user-plus"></i>Add User</a>
+        <a id="issue" href="./../pages/create-issue.html"> <i class="fa fa-fw  fa-plus-circle"></i>New Issue </a>
+        <a id="out" href=""><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+    </aside>
 
     <main>
 
-        <div id="id1">
-            <h1>Issues</h1>
-            <button type="submit" name="submit" id="btn"
-                onclick="window.location.replace('./../pages/add-user.html')">Create New Issue</button>
+        <div id="issues-header">
+            <div class="title-container">
+                <h1>Issues</h1>
+                <div class="underline">
+                    <hr class="rounded">
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <button type="submit" name="submit" class="btn" id="btn"
+            onclick="window.location.replace('./../pages/add-user.html')">Create New Issue</button>
         </div>
+
         <div id="tn">
 
-            <div id="nav_op">
+            <div id="nav-op">
                 <h3>Filter by:</h3>
                 <nav>
                     <ul id="options">
-                        <li><button type="all" name="all" id="btn1">ALL</button></li>
+                        <li><button class="selected" type="all" name="all" id="btn1">ALL</button></li>
                         <li><button type="open" name="open" id="btn2">OPEN</button></li>
                         <li><button type="tick" name="tick" id="btn3">MY TICKETS</button></a></li>
                     </ul>
@@ -41,14 +60,7 @@
             </table>
         </div>
 
-        <aside id="part">
-            <ul>
-                <li id="home"><a href="./../pages/home.html">Home</a></li>
-                <li id="adduser"><a href="./../pages/add-user.html">Add User</a></li>
-                <li id="issue"><a href="./../pages/create-issue.html">New Issue </a></li>
-                <li id="out"><a href="">Logout</a></li>
-            </ul>
-        </aside>
+        
 
 
     </main>
