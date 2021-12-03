@@ -43,15 +43,14 @@ const updateIssueStatus = (id, newStatus) => {
         body: formData,
     }).then(async (response) => {
         const issueStatusElement = document.getElementById('issue-status');
-        issueStatusElement.innerHTML = newStatus
-        const jsonResponse = await response.json().x;
+
+        const jsonResponse = await response.json();
         const issue = jsonResponse.issue;
         populateIssue(issue)
         alert("Issue Status Updated")
     }).catch((err) => {
-        if (err)
-        {
-            alert("There was an error creating an issue. With technical error "+err.toString())
+        if (err) {
+            alert("There was an error creating an issue. With technical error " + err.toString())
         }
     })
 }
@@ -104,7 +103,11 @@ const populateIssue = (issue) => {
     const issueAssignedToElement = document.getElementById('issue-assigned-to');
     const issuePriorityElement = document.getElementById('issue-priority');
 
-    issueStatusElement.innerHTML = issue.status;
+    if (issue.status === 'INPROGRESS')
+        issueStatusElement.innerHTML = 'IN PROGRESS'
+    else
+        issueStatusElement.innerHTML = issue.status;
+
     issueAssignedToElement.innerHTML = membersMap.get(issue.assigned_to);
     issueTypeElement.innerHTML = issue.type;
     issuePriorityElement.innerHTML = issue.priority;
