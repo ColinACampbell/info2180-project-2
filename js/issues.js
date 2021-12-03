@@ -71,6 +71,10 @@ const addDataToTable = (issues) => {
         titleCell.innerHTML = `${issue.id} <a href='./pages/view-issue.html?id=${issue.id}'> ${issue.title} </a>`
         typeCell.innerHTML = `${issue.type}`
         statusCell.innerHTML = `${issue.status}`
+        if (issue.status === 'INPROGRESS')
+            statusCell.innerHTML = 'IN PROGRESS'
+        else
+            statusCell.innerHTML = issue.status;
         assignedToCell.innerHTML = `${membersMap.get(issue.assigned_to)}`
         createdCell.innerHTML = `${createdDate.getFullYear() + "-" + (createdDate.getMonth() + 1) + "-" + (createdDate.getDate())}`
 
