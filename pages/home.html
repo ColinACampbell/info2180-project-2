@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel='stylesheet' type='text/css' href='' /> <!-- for the homepage -->
+    <script src="./../js/environment.js"></script>
+
+</head>
+
+<body class="container">
+    <header>
+        <img src=".jpg" alt="">
+        <h1>BugMe Issue Tracker</h1>
+    </header>
+
+    <main>
+
+        <div id="id1">
+            <h1>Issues</h1>
+            <button type="submit" name="submit" id="btn"
+                onclick="window.location.replace('./../pages/add-user.html')">Create New Issue</button>
+        </div>
+        <div id="tn">
+
+            <div id="nav_op">
+                <h3>Filter by:</h3>
+                <nav>
+                    <ul id="options">
+                        <li><button type="all" name="all" id="btn1">ALL</button></li>
+                        <li><button type="open" name="open" id="btn2">OPEN</button></li>
+                        <li><button type="tick" name="tick" id="btn3">MY TICKETS</button></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <table>
+
+            </table>
+        </div>
+
+        <aside id="part">
+            <ul>
+                <li id="home"><a href="./../pages/home.html">Home</a></li>
+                <li id="adduser"><a href="./../pages/add-user.html">Add User</a></li>
+                <li id="issue"><a href="./../pages/create-issue.html">New Issue </a></li>
+                <li id="out"><a href="">Logout</a></li>
+            </ul>
+        </aside>
+
+
+    </main>
+
+</body>
+
+</html>

@@ -16,7 +16,7 @@ window.onload = function(){
         formData.append('password',pass);
         formData.append('firstName',fName);
         formData.append('lastName',lName);
-        fetch('/api/user/create.php',{
+        fetch(httpUrl+'/api/user/create.php',{
             method:"POST",
             body:formData,
         }).then(async(response)=>{

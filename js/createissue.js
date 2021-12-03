@@ -1,21 +1,36 @@
-window.onload = function(){
+window.onload = function () {
+
+    const membersSelect = document.getElementById('assign')
+    loadMembers(membersSelect, members);
     listenevent();
 
 }
 
-function listenevent(){
-    let submit1 = document.querySelector(".btn");
-    
-    submit1.addEventListener('click', function(event){
-        formissue(); isValid(); getdata(); home(); event.preventDefault(); 
-        
-        
-    }) 
+const loadMembers = (membersSelect, members) => {
+
+
+    members.forEach((member) => {
+        var opt = document.createElement('option');
+        opt.value = member.id;
+        opt.innerHTML = member.firstName + " " + member.lastName;
+        membersSelect.appendChild(opt);
+    })
+
 }
 
-function formissue(){
-    var count = 0; 
-    var formdata ={assign: form.assign.value, type1: form.type1.value, priority: form.priority.value, title: form.title.value, description: form.description.value};
+function listenevent() {
+    let submit1 = document.querySelector(".btn");
+
+    submit1.addEventListener('click', function (event) {
+        formissue(); isValid(); getdata(); home(); event.preventDefault();
+
+
+    })
+}
+
+function formissue() {
+    var count = 0;
+    var formdata = { assign: form.assign.value, type1: form.type1.value, priority: form.priority.value, title: form.title.value, description: form.description.value };
     checkempty(formdata["title"], formdata["description"], formdata["type1"], formdata["priority"], formdata["assign"]);
     checkcorrect(formdata["title"], formdata["description"]);
 
@@ -45,7 +60,7 @@ function formissue(){
       }
 }
     function checkcorrect(title, description){
-        var regEx =  /^[0-9a-zA-Z]+$/;
+        var regEx =  /^[a-z\d\-_\s]+$/i;
         if (title != "" ){
             if(!(title.match(regEx))){
                 var title1 = document.getElementById("title");
@@ -53,16 +68,16 @@ function formissue(){
                 count = 1;
                 //alert("INVALID ENTRY: Enter only alphanumeric characters into the description and/or title fields.");
 
-            }  
+            }
         }
-        if ( description != ""){
-            if(!(description.match(regEx))){
+        if (description != "") {
+            if (!(description.match(regEx))) {
                 var des1 = document.getElementById("description");
                 des1.style.backgroundColor = "red";
                 count = 1;
                 //alert("INVALID ENTRY: Enter only alphanumeric characters into the description and/or title fields.");
 
-            }  
+            }
         }
 
 
@@ -70,36 +85,38 @@ function formissue(){
     return count;
 }
 
-function isValid(){
-    if (formissue() != 0){
+function isValid() {
+    if (formissue() != 0) {
         alert("INVALID ENTRY: Please check the textfield(s) hightlighted in red. Enter only alphanumeric characters into the description and/or title fields. Please select appropriate options from all drop down menus.");
         return false;
-        
+
     }
-    else{
-       
+    else {
+
         return true;
-        
+
     }
-    
+
 }
 
-function getdata(){
-    var formdata1 ={assign: form.assign.value, type1: form.type1.value, priority: form.priority.value, title: form.title.value, description: form.description.value};
-        
-         if (isValid()=== true){
+function getdata() {
+    var formdata1 = { assign: form.assign.value, type1: form.type1.value, priority: form.priority.value, title: form.title.value, description: form.description.value };
+
+    if (isValid() === true) {
         let loginForm = new FormData();
-        
+
         loginForm.set("assignedTo", formdata1["assign"]);
         loginForm.set("type", formdata1["type1"]);
         loginForm.set("priority", formdata1["priority"]);
         loginForm.set("title", formdata1["title"]);
-        loginForm.set("description",formdata1["description"]);
-        
+        loginForm.set("description", formdata1["description"]);
+        loginForm.set("status","OPEN")
 
-        fetch('http://localhost/info2180-project-2/api/issue/create.php', {
-            method: "POST", 
-            body: loginForm
+
+        fetch(httpUrl+'/api/issue/create.php', {
+            method: "POST",
+            body: loginForm,
+            credentials: "include"
         })
         .then(response => {
             if(response.ok){
@@ -110,23 +127,26 @@ function getdata(){
             }
         })
         .then((html) => {
-            console.log(html)
+            console.log(html);
           
         })
         .catch(err => {
             console.log(err);
         })
 
-        return true;   
+        return true;
     }
-   
+
 
 }
 
-function home(){
+function home() {
 
     if (getdata()=== true){
-        window.open("home.html");
+    {
+        alert("Issue was created")
+        window.location.href = "./../pages/issues.html";
+    }
     }else{
         return false;
     }

@@ -15,18 +15,20 @@ const addDataToTable = (issues) => {
         const assignedToCell = row.insertCell(3);
         const createdCell = row.insertCell(4);
 
-        titleCell.innerHTML = `${issue.id} <a href='/pages/issue/view-issue.html?id=${issue.id}'> ${issue.title} </a>`
+        const createdDate = new Date(issue.created)
+
+        titleCell.innerHTML = `${issue.id} <a href='/pages/view-issue.html?id=${issue.id}'> ${issue.title} </a>`
         typeCell.innerHTML = `${issue.type}`
         statusCell.innerHTML = `${issue.status}`
-        assignedToCell.innerHTML = `${issue.assigned_to}`
-        createdCell.innerHTML = `${issue.created}`
+        assignedToCell.innerHTML = `${membersMap.get(issue.assigned_to)}`
+        createdCell.innerHTML = `${createdDate.getFullYear() + "-" + (createdDate.getMonth()+1) + "-" + (createdDate.getDate())}`
 
         rowCount ++;
     })
 }
 
 const getIssues = () => {
-    fetch('/api/issue/all.php').then(async (response) => {
+    fetch(httpUrl+'/api/issue/all.php').then(async (response) => {
         const jsonReponse = await response.json();
         const issues = jsonReponse.issues
         addDataToTable(issues)

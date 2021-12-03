@@ -10,7 +10,7 @@ window.onload = function(){
         const formData = new FormData();
         formData.append('email',email);
         formData.append('password',pass);
-        fetch('/api/user/auth.php',{
+        fetch(httpUrl+'/api/user/auth.php',{
             method:"POST",
             body:formData,
             credentials:'include'
@@ -21,12 +21,12 @@ window.onload = function(){
             localStorage.setItem('members',JSON.stringify(responseJson.members))
             // responseJson.message use this to check if a user is valid
             if (responseJson.message == "User Found") {
-                window.location = 'index.html';
+                window.location = '/pages/issues.html';
             } else {
                 alert("User Not Found!");
             }
         }).catch((error)=>{
-            console.log(error)
+            console.log(error);
         })
     })
 }
