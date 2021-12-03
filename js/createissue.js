@@ -28,13 +28,13 @@ function listenevent() {
 
 function formissue() {
     var count = 0;
-    var formdata = { assign: form.assign.value, type1: form.type1.value, priority: form.priority.value, title: form.title.value, description: form.description.value };
-    checkempty(formdata["title"], formdata["description"], formdata["type1"], formdata["priority"], formdata["assign"]);
-    checkcorrect(formdata["title"], formdata["description"]);
+    var formdata = { assign: form.assign.value, type1: form.type1.value, priority: form.priority.value, titletext: form.titletext.value, description: form.description.value };
+    checkempty(formdata["titletext"], formdata["description"], formdata["type1"], formdata["priority"], formdata["assign"]);
+    checkcorrect(formdata["titletext"], formdata["description"]);
 
     function checkempty(title, description, type, prior, assigns) {
         if (title == "" || description == "") {
-            var title1 = document.getElementById("title");
+            var title1 = document.getElementById("titletext");
             var des1 = document.getElementById("description");
             title1.style.backgroundColor = "red";
             des1.style.backgroundColor = "red";
@@ -43,7 +43,7 @@ function formissue() {
         }
 
         if (title != "") {
-            var title2 = document.getElementById("title");
+            var title2 = document.getElementById("titletext");
             title2.style.backgroundColor = "white";
             //alert("Not empty");
         }
@@ -61,17 +61,8 @@ function formissue() {
         var regEx = /^[a-z\d\-_\s]+$/i;
         if (title != "") {
             if (!(title.match(regEx))) {
-                var title1 = document.getElementById("title");
+                var title1 = document.getElementById("titletext");
                 title1.style.backgroundColor = "red";
-                count = 1;
-                //alert("INVALID ENTRY: Enter only alphanumeric characters into the description and/or title fields.");
-
-            }
-        }
-        if (description != "") {
-            if (!(description.match(regEx))) {
-                var des1 = document.getElementById("description");
-                des1.style.backgroundColor = "red";
                 count = 1;
                 //alert("INVALID ENTRY: Enter only alphanumeric characters into the description and/or title fields.");
 
@@ -98,7 +89,7 @@ function isValid() {
 }
 
 async function getdata() {
-    var formdata1 = { assign: form.assign.value, type1: form.type1.value, priority: form.priority.value, title: form.title.value, description: form.description.value };
+    var formdata1 = { assign: form.assign.value, type1: form.type1.value, priority: form.priority.value, titletext: form.titletext.value, description: form.description.value };
 
     if (isValid() === true) {
         let loginForm = new FormData();
@@ -106,7 +97,7 @@ async function getdata() {
         loginForm.set("assignedTo", formdata1["assign"]);
         loginForm.set("type", formdata1["type1"].toUpperCase());
         loginForm.set("priority", formdata1["priority"]);
-        loginForm.set("title", formdata1["title"]);
+        loginForm.set("title", formdata1["titletext"]);
         loginForm.set("description", formdata1["description"]);
         loginForm.set("status", "OPEN")
 

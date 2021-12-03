@@ -75,17 +75,23 @@ const populateIssue = (issue) => {
     const createdDate = new Date(issue.created)
     const updatedDate = new Date(issue.updated)
     const hour = (updatedDate.getHours() + 24) % 12 || 12;
+    const hour1 = (createdDate.getHours() + 24) % 12 || 12;
 
     const issueCreated = document.getElementById('issue-created')
 
-    issueCreated.innerHTML = `Issue Created On ${MONTHS[createdDate.getMonth()] + " " + createdDate.getDate()} By ${membersMap.get(issue.created_by)}`
-
-    const issueUpdated = document.getElementById('issue-updated')
-    if( updatedDate.getHours() >= 12){
-        issueUpdated.innerHTML = `Last updated on ${MONTHS[updatedDate.getMonth()] + " " + updatedDate.getDate() +" at " + hour + ":" + (updatedDate.getMinutes()<10? '0' : '') + updatedDate.getMinutes() +"PM"}`
+    if( createdDate.getHours() >= 12){
+        issueCreated.innerHTML = `Issue Created On ${MONTHS[createdDate.getMonth()] + " " + createdDate.getDate()+", "+createdDate.getFullYear()+" at " + hour1 + ":" + (createdDate.getMinutes()<10? '0' : '') + createdDate.getMinutes() +"PM"} By ${membersMap.get(issue.created_by)}`
     }if( updatedDate.getHours() < 12){
-        issueUpdated.innerHTML = `Last updated on ${MONTHS[updatedDate.getMonth()] + " " + updatedDate.getDate() +" at " + hour + ":" + (updatedDate.getMinutes()<10? '0' : '') + updatedDate.getMinutes() +"AM"}`
+        issueCreated.innerHTML = `Issue Created On ${MONTHS[createdDate.getMonth()] + " " + createdDate.getDate()+", "+createdDate.getFullYear()+" at " + hour1 + ":" + (createdDate.getMinutes()<10? '0' : '') + createdDate.getMinutes() +"AM"} By ${membersMap.get(issue.created_by)}`
     }
+
+    const issueUpdated = document.getElementById('issue-updated');
+    
+     if( updatedDate.getHours() >= 12){
+         issueUpdated.innerHTML = `Last updated on ${MONTHS[updatedDate.getMonth()] + " " + updatedDate.getDate() +", "+updatedDate.getFullYear()+" at " + hour + ":" + (updatedDate.getMinutes()<10? '0' : '') + updatedDate.getMinutes() +"PM"}`
+     }if( updatedDate.getHours() < 12){
+         issueUpdated.innerHTML = `Last updated on ${MONTHS[updatedDate.getMonth()] + " " + updatedDate.getDate() +", "+updatedDate.getFullYear()+" at " + hour + ":" + (updatedDate.getMinutes()<10? '0' : '') + updatedDate.getMinutes() +"AM"}`
+     }
     
     const issueStatusElement = document.getElementById('issue-status');
     const issueTypeElement = document.getElementById('issue-type');
