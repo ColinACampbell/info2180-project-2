@@ -4,7 +4,7 @@ window.onload = function(){
 
     logout.addEventListener('click', function(event){
         event.preventDefault();
-        fetch('/api/user/session.php',{
+        fetch(httpUrl+'/api/user/session.php',{
             method:"POST",
             //body:"Logout",
         }).then(async(response)=>{
