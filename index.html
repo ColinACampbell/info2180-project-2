@@ -4,11 +4,34 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>User Login</title>
+<<<<<<< HEAD
  <link rel="stylesheet" href=""> <!-- for the userlogin -->
  <script src="js/environment.js"></script>
+=======
+ <link rel='stylesheet' type='text/css' href='styles.css' />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+ 
+>>>>>>> css-implementation
 </head>
     <div class="container">
+
+        <aside class="sidebar">
+            <div id="sidebar-header">
+                <i class="fa fa-fw fa-bug"></i>
+                <a id="title" href="#"></i> BugMe Issue Tracker</a>
+            </div>
+            <hr class="solid">
+            <a href="index.html"> <i class="fa fa-fw fa-home"></i>Home</a>
+            <a href="user.html"> <i class="fa fa-fw fa-user-plus"></i>Add User</a>
+            <a href="issuesform.html"> <i class="fa fa-fw  fa-plus-circle"></i>New Issue </a>
+            <a href="login.html"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </aside>
+
     <body>
+<<<<<<< HEAD
         <form method="post" action="" onsubmit="return false">
             <fieldset>
             <legend>Log in</legend>
@@ -20,6 +43,36 @@
             
             </fieldset>
         </form>
+=======
+        <div class="title-container">
+            <h1>Log In</h1>
+            <div class="underline">
+                <hr class="rounded">
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <form class="card" method="post" action="" onsubmit="return false">
+            
+            
+            <div>
+                <label for="email"> Email</label> <br/>
+                <input name="email" type="text" required placeholder="Enter email" />
+            </div>
+
+            <div>
+                <label for="password">Password</label><br />
+                <input name="password" type="password" required placeholder="Enter password" />
+            </div>
+
+            <button class="btn" id="submit">Submit</button>  <br>
+            <a href="pages\add-user.html">Sign Up? </a>
+            
+        </form>
+
+        <script src="js\login.js">
+
+>>>>>>> css-implementation
         </script>
     </body>
     <script src="js/login.js"></script>

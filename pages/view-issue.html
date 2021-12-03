@@ -2,27 +2,61 @@
 <html>
 
 <head>
-    <title>Info2180-Project2</title>
+    <title>Issue</title>
     <!--Stylesheet link-->
+<<<<<<< HEAD
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="">
     <script src="./../js/environment.js"></script>
     <script src="./../js/members.js"></script>
 
+=======
+    <link rel='stylesheet' type='text/css' href='styles.css' >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+>>>>>>> css-implementation
 </head>
 
 
 <body>
-    <div class="header">
-        <h1>BugMe Issue Tracker</h1>
-    </div>
+
+    <aside class="sidebar">
+        <div id="sidebar-header">
+            <i class="fa fa-fw fa-bug"></i>
+            <a id="title" href="#"></i> BugMe Issue Tracker</a>
+        </div>
+        <hr class="solid">
+        <a href="index.html"> <i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="user.html"> <i class="fa fa-fw fa-user-plus"></i>Add User</a>
+        <a href="issuesform.html"> <i class="fa fa-fw  fa-plus-circle"></i>New Issue </a>
+        <a href="login.html"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+    </aside>
+
     <main>
         <div class="body">
+<<<<<<< HEAD
             <div class="bodygrid">
                 <div id="bodymain">
                     <h2 id="title">Loading...</h2>
                     <div>
                         <p id="description">Loading ...</p>
+=======
+            <h1 id="title">XSS Vulnerability in Add User Form</h1>
+            <h2 id="subtitle">Issue #100</h2>
+            <div class="body-flex-container">
+                <div class="card" id="issue-card" id="bodymain">
+                    <div >
+                        <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim id est laborum.</p>
+>>>>>>> css-implementation
                     </div>
 
                     <div id="dateinfo">
@@ -36,6 +70,7 @@
                 </div>
 
                 <div id="asidemain">
+<<<<<<< HEAD
                     <div>
                         <div>
                             <h3> Assigned To</h3>
@@ -70,6 +105,17 @@
                     </ul>
 
                 </aside>
+=======
+                    <div class="card" id="asidemain-card">
+                    
+                    </div>
+                    <div id="btn-container">
+                        <button class="btn" id="closebtn">Mark as Closed</button> <br />
+                        <button class="btn" id="progbtn">Mark as In Progress</button>
+                    </div>
+                </div>
+            </div>
+>>>>>>> css-implementation
     </main>
     <script src="./../js/view-issue.js"></script>
 </body>
