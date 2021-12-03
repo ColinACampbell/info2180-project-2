@@ -68,7 +68,7 @@ const addDataToTable = (issues) => {
         const createdCell = row.insertCell(4);
 
         const createdDate = new Date(issue.created)
-        titleCell.innerHTML = `${issue.id} <a href='./pages/view-issue.html?id=${issue.id}'> ${issue.title} </a>`
+        titleCell.innerHTML = `#${issue.id} <a href='./pages/view-issue.html?id=${issue.id}'> ${issue.title} </a>`
         typeCell.innerHTML = `${issue.type}`
         statusCell.innerHTML = `${issue.status}`
         if (issue.status === 'INPROGRESS')
