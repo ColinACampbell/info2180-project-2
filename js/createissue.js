@@ -119,7 +119,7 @@ async function getdata() {
             .then(response => {
                 if (response.ok) {
                     alert("Issue was created")
-                    window.location.href = "./../pages/home.html";
+                    window.location.href = "./../home.html";
                 }
                 else {
                     throw new Error(`An error has occured: ${response.status}`);
@@ -144,7 +144,7 @@ function home() {
     if (getdata() === true) {
         {
             alert("Issue was created")
-            window.location.href = "./../pages/home.html";
+            window.location.href = "./../home.html";
         }
     } else {
         return false;
