@@ -1,80 +1,80 @@
 <!DOCTYPE html>
 <html>
-	<head>
-        <meta charset="utf-8">
-		<title>Create Issue</title>
-		<link rel='stylesheet' type='text/css' href='' /> <!-- for the main issueform -->
-        <script src="./../js/createissue.js"></script>
-	</head>
-	<body class="container">
-		<header>
-            <h1>BugMe Issue Tracker</h1>
-		</header>
 
-		<main>
+<head>
+    <meta charset="utf-8">
+    <title>Create Issue</title>
+    <link rel='stylesheet' type='text/css' href='' /> <!-- for the main issueform -->
+    <script src="./../js/members.js"></script>
+    <script src="js/environment.js"></script>
 
-			<div id="controls">
+</head>
 
-                <form method="post" name="form">
-                    <h1> Create Issue</h1>
-                    <div>
-                        <label for= "title">Title</label>
-                        <input id="title" type="text" name="title"/>
-            
-                    </div>
-                    <div>
-                        <label for= "description">Description</label>
-                        <input id="description" type="text" name="description"/>
-                    </div>
+<body class="container">
+    <header>
+        <h1>BugMe Issue Tracker</h1>
+    </header>
 
-                    <div>
-                        <label for="assign">Assigned To </label>
-                        <select id="assign" name="assign">
-                            <option value="Blank">No Selection</option>
-                            <option value="Marsha">Marsha Brady</option>
-                            <option value="Jann">Jann Brady</option>
-                            <option value="Mike">Mike Brady</option>
-                            <option value="Marcia">Marcia Brady</option>
-                            <option value="Tom">Tom Brady</option>
-                            <option value="Admin">Admin</option>
-                        </select>
-                    </div>
+    <main>
 
-                    <div>
-                        <label for="type1">Type </label>
-                        <select id="type1" name="type1">
-                            <option value="Blank">No Selection</option>
-                            <option value="Bug">Bug</option>
-                            <option value="Task">Task</option>
-                            <option value="Proposal">Proposal</option>
-                        </select>
-                    </div>
+        <div id="controls">
 
-                    <div>
-                        <label for="priority"> Priority </label>
-                        <select id="priority" name="priority" >
-                            <option value="Blank">No Selection</option>
-                            <option value="Minor">Minor</option>
-                            <option value="Major">Major</option>
-                            <option value="Critical">Critical</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button type="submit" name ="submit" class="btn">Submit</button>
-                    </div>
-                </form>
-                <aside id="part">
-                     <ul>
+            <form method="post" name="form" onsubmit="return false">
+                <h1> Create Issue</h1>
+                <div>
+                    <label for="title">Title</label>
+                    <input id="title" type="text" name="title" />
+
+                </div>
+                <div>
+                    <label for="description">Description</label>
+                    <input id="description" type="text" name="description" />
+                </div>
+
+                <div>
+                    <label for="assign">Assigned To </label>
+                    <select id="assign" name="assign">
+
+                    </select>
+                </div>
+
+                <div>
+                    <label for="type1">Type </label>
+                    <select id="type1" name="type1">
+                        <option value="Blank">No Selection</option>
+                        <option value="Bug">Bug</option>
+                        <option value="Task">Task</option>
+                        <option value="Proposal">Proposal</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="priority"> Priority </label>
+                    <select id="priority" name="priority">
+                        <option value="Blank">No Selection</option>
+                        <option value="Minor">Minor</option>
+                        <option value="Major">Major</option>
+                        <option value="Critical">Critical</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" name="submit" class="btn">Submit</button>
+                </div>
+            </form>
+            <aside id="part">
+                <ul>
+                    <ul>
                         <li id="home"><a href="./../pages/home.html">Home</a></li>
                         <li id="adduser"><a href="./../pages/add-user.html">Add User</a></li>
                         <li id="issue"><a href="./../pages/create-issue.html">New Issue </a></li>
                         <li id="out"><a href="">Logout</a></li>
                     </ul>
-                </aside>
-			</div>
-			
-			
-		</main>
+                </ul>
+            </aside>
+        </div>
+    </main>
+    <script src="./../js/createissue.js"></script>
 
-	</body>
+</body>
+
 </html>

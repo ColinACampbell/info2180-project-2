@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>User Login</title>
- <link rel="stylesheet" href=""> <!-- for the userlogin -->
- <script src="./../js/createUser.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href=""> <!-- for the userlogin -->
+    <script src="js/environment.js"></script>
 </head>
-    <div class="container">
+<div class="container">
+
     <body>
         <form method="post" action="" onsubmit="return false">
             <fieldset>
-            <legend>Create User</legend>
-            <label for="firstname"> First Name </label> <br/>
-            <input name="firstname" type="text" required placeholder="Enter First Name" /> <br/>
-            <label for="lastname"> Last Name </label> <br/>
-            <input name="lastname" type="text" required placeholder="Enter Last Name" /> <br/>
-            <label for="email"> Email</label> <br/>
-            <input name="email" type="text" required placeholder="Enter email" /> <br/>
-            <label for="password">Password</label><br /> 
-            <input name="password" type="password" required placeholder="Enter password" /> <br/>
-            <button id="submit">Submit</button>  <br/>
+                <legend>Create User</legend>
+                <label for="firstname"> First Name </label> <br />
+                <input name="firstname" type="text" required placeholder="Enter First Name" /> <br />
+                <label for="lastname"> Last Name </label> <br />
+                <input name="lastname" type="text" required placeholder="Enter Last Name" /> <br />
+                <label for="email"> Email</label> <br />
+                <input name="email" type="text" required placeholder="Enter email" /> <br />
+                <label for="password">Password</label><br />
+                <input name="password" type="password" required placeholder="Enter password" /> <br />
+                <button id="submit">Submit</button> <br />
             </fieldset>
         </form>
 
@@ -32,10 +34,12 @@
                 <li id="out"><a href="">Logout</a></li>
             </ul>
         </aside>
-        
+
 
         </script>
     </body>
+    <script src="./../js/createUser.js"></script>
+
 </div>
 
 </html>

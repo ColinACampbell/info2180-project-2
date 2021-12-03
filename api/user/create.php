@@ -30,7 +30,6 @@ if (isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['ema
 
         echo json_encode([
             'message' => 'User Was Created',
-            'password' => $encodedPassword
         ]);
     } else {
         echo json_encode([
