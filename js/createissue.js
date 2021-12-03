@@ -106,7 +106,7 @@ function getdata() {
         let loginForm = new FormData();
 
         loginForm.set("assignedTo", formdata1["assign"]);
-        loginForm.set("type", formdata1["type1"]);
+        loginForm.set("type", formdata1["type1"].toUpperCase());
         loginForm.set("priority", formdata1["priority"]);
         loginForm.set("title", formdata1["title"]);
         loginForm.set("description", formdata1["description"]);
