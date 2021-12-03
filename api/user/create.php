@@ -18,8 +18,8 @@ if (isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['ema
 
     if (count($result) == 0) {
         $encodedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $insertQuery = "INSERT INTO `Users` (`id`, `firstname`, `lastname`, `password`, `email`, `date_joined`) " . 
-        "VALUES (NULL, :firstName , :lastName, :password, :email, CURRENT_TIMESTAMP);";
+        $insertQuery = "INSERT INTO `Users` (`id`, `firstname`, `lastname`, `password`, `email`, `date_joined`) " .
+            "VALUES (NULL, :firstName , :lastName, :password, :email, CURRENT_TIMESTAMP);";
         $statement = $db_conn->prepare($insertQuery);
         $statement->execute([
             'email' => $email,
@@ -28,14 +28,20 @@ if (isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['ema
             'password' => $encodedPassword
         ]);
 
-        echo json_encode([
-            'message' => 'User Was Created',
-        ]);
+
+        // Select all the members
+        $statement2 = $db_conn->prepare("SELECT id, firstName, lastName, email FROM users");
+        $statement2->execute();
+        $memberResults = $statement2->fetchAll(PDO::FETCH_ASSOC);
+
+        $response['members'] = $memberResults;
+        $response['message'] = 'User Was Created';
     } else {
-        echo json_encode([
-            'message' => 'User Exists'
-        ]);
+        $response['message'] = 'User Exists';
     }
 } else {
-    echo "Credentials are needed";
+    $response['message'] = "Credentials are needed";
 }
+
+
+echo json_encode(($response));

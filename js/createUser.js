@@ -23,6 +23,7 @@ window.onload = function(){
             const responseJson = await response.json();
             if (responseJson.message == "User Was Created") {
                 alert("User Created!");
+                localStorage.setItem('members',JSON.stringify(responseJson.members))
                 window.location = "./../home.html";
             } else {
                 alert("Unable to Create User");
