@@ -22,7 +22,6 @@ window.onload = function () {
         showMyIssuesBtn.classList.remove('selected')
         showAllIssuesBtn.classList.remove('selected')
 
-
         clearTable();
 
         const openIssues = [];
@@ -41,15 +40,13 @@ window.onload = function () {
         showMyIssuesBtn.classList.add('selected')
         showAllIssuesBtn.classList.remove('selected')
 
-        console.log("Clicked")
-
         clearTable();
 
         const myIssues = [];
 
         const user = getUser();
         issuesGlobal.forEach((issue) => {
-            if (parseInt(issue.assigned_to) === user.id)
+            if (parseInt(issue.assigned_to) === parseInt(user.id))
                 myIssues.push(issue)
         })
 
