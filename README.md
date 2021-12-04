@@ -13,6 +13,8 @@
 ## Things to note
  - Ensure that the mysql port is running on port 3306;
  - Ensure that the frontend environment url is correct in `js/environment.js`
+ - To login: email = admin@project2.com password = password123
+
 
 # Working on features 
 - Create a feature branch `git checkout -b feature-name-of-branch`

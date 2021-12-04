@@ -22,7 +22,7 @@ function listenevent() {
     let submit1 = document.querySelector(".btn");
 
     submit1.addEventListener('click', function (event) {
-        /**formissue(); **/isValid(); getdata(); /**home();**/ event.preventDefault();
+        isValid(); getdata(); /**home();**/ event.preventDefault();
     })
 }
 
