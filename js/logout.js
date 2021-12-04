@@ -1,6 +1,7 @@
 window.onload = function(){
 
     var logout = document.getElementById('out');
+    console.log(logout)
 
     logout.addEventListener('click', function(event){
         event.preventDefault();
