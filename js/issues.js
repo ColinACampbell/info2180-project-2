@@ -70,11 +70,19 @@ const addDataToTable = (issues) => {
         const createdDate = new Date(issue.created)
         titleCell.innerHTML = `#${issue.id} <a href='./pages/view-issue.html?id=${issue.id}'> ${issue.title} </a>`
         typeCell.innerHTML = `${issue.type}`
-        statusCell.innerHTML = `${issue.status}`
-        if (issue.status === 'INPROGRESS')
-            statusCell.innerHTML = 'IN PROGRESS'
+
+        if (issue.status === 'INPROGRESS') {
+            statusCell.innerHTML = `<button class="btn progress-btn"> IN PROGRESS </button>`
+        }
         else
-            statusCell.innerHTML = issue.status;
+            if (issue.status === 'CLOSED') {
+                statusCell.innerHTML = `<button class="btn closed-btn"> ${issue.status} </button>`
+            } else {
+                // it is open
+                statusCell.innerHTML = `<button class="btn open-btn"> ${issue.status} </button>`
+            }
+
+
         assignedToCell.innerHTML = `${membersMap.get(issue.assigned_to)}`
         createdCell.innerHTML = `${createdDate.getFullYear() + "-" + (createdDate.getMonth() + 1) + "-" + (createdDate.getDate())}`
 
