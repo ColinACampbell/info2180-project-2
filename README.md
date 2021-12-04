@@ -10,6 +10,10 @@
  - Import the schema.sql file into php my admin
  - Note: Do not run the project from a separate PHP server, run it on XAMPP, MAMP or any AMPP
 
+## Things to note
+ - Ensure that the mysql port is running on port 3306;
+ - Ensure that the frontend environment url is correct in `js/environment.js`
+
 # Working on features 
 - Create a feature branch `git checkout -b feature-name-of-branch`
 - Always ensure that feature is included in the branch name
