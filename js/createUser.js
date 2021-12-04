@@ -3,6 +3,7 @@ window.onload = function(){
     var passwordInput = document.getElementsByName('password')[0];
     const fNameInput = document.getElementsByName('firstname')[0];
     const lNameInput = document.getElementsByName('lastname')[0];
+    var emailReGex = /^\S+@\S+\.\S+$/i;
 
     var submit = document.getElementById('submit');
     submit.addEventListener('click', function(event){
@@ -11,6 +12,9 @@ window.onload = function(){
         var pass = passwordInput.value;
         var fName = fNameInput.value;
         var lName = lNameInput.value;
+        if(email === "" || !emailReGex.test(email)) {
+            alert("Please enter a valid email address");
+        } else {
         const formData = new FormData();
         formData.append('email',email);
         formData.append('password',pass);
@@ -31,6 +35,8 @@ window.onload = function(){
         }).catch((error)=>{
             console.log(error)
         })
+        }
+
     })
 
 }
