@@ -27,9 +27,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
             // Get all the other members
             $statement2 = $db_conn->prepare("SELECT id, firstName, lastName, email FROM users");
-            $statement2->execute([
-                'id' => $user['id']
-            ]);
+            $statement2->execute();
             $memberResults = $statement2->fetchAll(PDO::FETCH_ASSOC);
 
             $response['members'] = $memberResults;
