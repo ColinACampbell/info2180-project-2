@@ -16,8 +16,8 @@
 
 # Group 20 Names and ID Numbers
 
-Tariq Kelly-620139223
-Johvahn Brown- 620129598
-Jevon Forrest- 620084161
-Colin Campbell-620135678
-De'Anna-Shanae Beadle- 620140477
+- Tariq Kelly - 620139223
+- Johvahn Brown - 620129598
+- Jevon Forrest - 620084161
+- Colin Campbell - 620135678
+- De'Anna-Shanae Beadle - 620140477
