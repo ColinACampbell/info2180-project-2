@@ -12,7 +12,7 @@
 
 # How to log in 
  - Email: `admin@project2.com`
- - Password: `123`
+ - Password: `password123`
 
 ## Things to note
  - Ensure that the mysql port is running on port 3306;
