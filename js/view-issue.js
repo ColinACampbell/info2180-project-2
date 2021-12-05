@@ -44,9 +44,16 @@ const updateIssueStatus = (id, newStatus) => {
     }).then(async (response) => {
 
         const jsonResponse = await response.json();
-        const issue = jsonResponse.issue;
-        populateIssue(issue)
-        alert("Issue Status Updated")
+        if (response.status === 200) {
+            const issue = jsonResponse.issue;
+            populateIssue(issue)
+            alert("Issue Status Updated")
+        } else if (401) {
+            alert("You are not authorized")
+            window.location.href = "./../index.html";
+        } else {
+            alert(jsonResponse.message)
+        }
     }).catch((err) => {
         if (err) {
             alert("There was an error creating an issue. With technical error " + err.toString())
@@ -61,7 +68,7 @@ const getIssue = (id) => {
         if (response.status === 200) {
             const issue = jsonReponse.issue
             populateIssue(issue)
-        } else if(response.status === 401) {
+        } else if (response.status === 401) {
             alert("You are not authorized")
             window.location.href = "./../index.html";
         }

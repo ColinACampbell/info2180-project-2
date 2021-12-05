@@ -18,12 +18,14 @@ if ($user != null) {
         $statement2->execute();
         $result = $statement2->fetchAll(PDO::FETCH_ASSOC);
         $response['issue'] = $result[0];
-
+        http_response_code(200);
     } else {
-        $response['message'] = "Not Updated";
+        $response['message'] = "Fields not set";
+        http_response_code(400);
     }
 } else {
     $response['message'] = "No Login";
+    http_response_code(401);
 }
 
 echo json_encode($response);
