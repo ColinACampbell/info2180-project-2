@@ -25,12 +25,16 @@ window.onload = function(){
             body:formData,
         }).then(async(response)=>{
             const responseJson = await response.json();
-            if (responseJson.message == "User Was Created") {
-                alert("User Created!");
+            if (response.status === 201) { // 201 means created
+                alert("User Created");
                 localStorage.setItem('members',JSON.stringify(responseJson.members))
                 window.location = "./../home.html";
-            } else {
-                alert("Unable to Create User");
+            } else if (response.status === 409) {
+                alert("User email already exists");
+            } else if (response.status === 401)
+            {
+                alert("You are not authenticated");
+                location.href = "./../index.html"
             }
         }).catch((error)=>{
             console.log(error)
