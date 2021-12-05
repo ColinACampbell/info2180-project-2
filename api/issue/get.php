@@ -13,9 +13,11 @@ if ($user != null) {
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         $response['issue'] = $result[0];
+        http_response_code(200);
     }
 } else {
     $response['message'] = "No Login";
+    http_response_code(401);
 }
 
 echo json_encode($response);

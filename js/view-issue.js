@@ -42,7 +42,6 @@ const updateIssueStatus = (id, newStatus) => {
         method: "POST",
         body: formData,
     }).then(async (response) => {
-        const issueStatusElement = document.getElementById('issue-status');
 
         const jsonResponse = await response.json();
         const issue = jsonResponse.issue;
@@ -59,8 +58,13 @@ const updateIssueStatus = (id, newStatus) => {
 const getIssue = (id) => {
     fetch(httpUrl + '/api/issue/get.php?id=' + id).then(async (response) => {
         const jsonReponse = await response.json();
-        const issue = jsonReponse.issue
-        populateIssue(issue)
+        if (response.status === 200) {
+            const issue = jsonReponse.issue
+            populateIssue(issue)
+        } else if(response.status === 401) {
+            alert("You are not authorized")
+            window.location.href = "./../index.html";
+        }
     })
 }
 
