@@ -3,6 +3,8 @@ CREATE DATABASE bugme;
 
 USE bugme;
 
+DROP USER 'bugme_user'@'localhost';
+flush privileges;
 CREATE USER 'bugme_user'@'localhost' IDENTIFIED BY '0000';
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON VoteLogDB.* TO 'bugme_user'@'localhost' IDENTIFIED BY '0000';
 
