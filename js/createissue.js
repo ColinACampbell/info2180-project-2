@@ -111,6 +111,9 @@ async function getdata() {
                 if (response.ok) {
                     alert("Issue was created")
                     window.location.href = "./../home.html";
+                } else if (response.status === 401) {
+                    alert("You are not authenticated")
+                    window.location.href = "./../index.html";
                 }
                 else {
                     throw new Error(`An error has occured: ${response.status}`);

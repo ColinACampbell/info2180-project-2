@@ -102,9 +102,17 @@ const clearTable = () => {
 const getIssues = () => {
     fetch(httpUrl + '/api/issue/all.php').then(async (response) => {
         const jsonReponse = await response.json();
-        const issues = jsonReponse.issues
-        issuesGlobal = [...issues]
-        addDataToTable(issues)
+
+        if (response.status === 200) {
+            const issues = jsonReponse.issues
+            issuesGlobal = [...issues]
+            addDataToTable(issues)
+        } else if (response.status === 401) {
+            alert(jsonReponse.message)
+            location.href = "./index.html"
+        }
+    }).catch(error => {
+        console.log(error)
     })
 }
 
@@ -112,7 +120,7 @@ const getUser = () => {
     const userString = localStorage.getItem('user');
 
     if (userString === null || undefined) {
-        alert("Error, Please login and try again")
+        return {};
     } else {
         return JSON.parse(userString)
     }

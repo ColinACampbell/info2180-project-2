@@ -3,6 +3,7 @@ CREATE DATABASE bugme;
 
 USE bugme;
 
+GRANT USAGE ON *.* TO 'bugme_user'@'localhost'; # Grant privilege to maybe drop the user
 DROP USER 'bugme_user'@'localhost';
 flush privileges;
 CREATE USER 'bugme_user'@'localhost' IDENTIFIED BY '0000';
@@ -37,7 +38,7 @@ CREATE TABLE Issues(
 );
 
 /*** Password is 1234 ***/
-INSERT INTO Users VALUES ("0","Nikola","Tesla","$2y$10$2kgBym5220/3z1K61Mapy.lPjPo6i0lLNYq3.G3JimpaNXK3sA0ha","admin@project2.com","2019-11-26");
+INSERT INTO Users VALUES ("0","Nikola","Tesla","$2y$10$jX2vAXLsHrDEk2wLSszptOOmqgmt/60EcYk/ucWopjmR20EWW3Zpa","admin@project2.com","2019-11-26");
 INSERT INTO Issues VALUES ("0","Final Project",
 	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
