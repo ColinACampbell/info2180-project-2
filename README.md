@@ -5,10 +5,14 @@
 - Install XAMPP or MAMP 
 - PHP
 - Any text editor
-
 # Project Set Up
  - Import the schema.sql file into php my admin
  - Note: Do not run the project from a separate PHP server, run it on XAMPP, MAMP or any AMPP
+
+
+# How to log in 
+ - Email: `admin@project2.com`
+ - Password: `123`
 
 ## Things to note
  - Ensure that the mysql port is running on port 3306;
